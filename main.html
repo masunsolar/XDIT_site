@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIT-X: Proposta Interativa de Projeto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body class="antialiased">
+
+    <header class="main-header">
+        <nav class="container main-nav">
+            <div class="nav-logo">
+                <img src="./images/logoXDIT.png" alt="Logo">
+                <h1 class="logo">XDIT</h1>
+            </div>
+
+            <div class="nav-links">
+                <a href="#">Sobre</a>
+                <a href="#">Contato</a>
+                <a href="#">Serviços</a>
+                <a href="#crescimento" class="nav-link">Crescimento</a>
+                <a href="/login/login.html" class="active">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container main-content">
+
+        <section class="page-section intro-section">
+            <h1 class="main-title">Proposta Interativa do Projeto DIT-X</h1>
+            <p class="main-subtitle">Transformando a complexidade fiscal em uma vantagem estratégica através de uma
+                plataforma SaaS inteligente, focada e acessível.</p>
+        </section>
+
+        <section id="desafio" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">O Desafio Fiscal das Empresas Médias</h2>
+                <p class="section-subtitle">Empresas de médio porte, escritórios contábeis e transportadoras enfrentam
+                    um cenário fiscal complexo e oneroso. Identificamos três dores centrais que as soluções atuais não
+                    resolvem de forma eficaz.</p>
+            </div>
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <div class="card-icon-wrapper icon-red">!</div>
+                    <h3 class="card-title">Gestão Complexa e Cara</h3>
+                    <p class="card-text">Gerenciar múltiplos CNPJs com processos manuais consome tempo precioso, aumenta
+                        custos operacionais e limita a escalabilidade do negócio.</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="card-icon-wrapper icon-orange">⚠️</div>
+                    <h3 class="card-title">Riscos de Autuação</h3>
+                    <p class="card-text">A validação manual de regras fiscais como CFOP e CST é propensa a erros,
+                        resultando em multas, retrabalho e insegurança jurídica.</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="card-icon-wrapper icon-yellow">?</div>
+                    <h3 class="card-title">Lacuna no Mercado</h3>
+                    <p class="card-text">O mercado oferece soluções básicas demais ou sistemas ERP caros e complexos.
+                        Falta uma ferramenta intermediária, focada e com custo-benefício real.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucao" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">Nossa Solução: DIT-X</h2>
+                <p class="section-subtitle">O DIT-X é uma plataforma SaaS projetada para ser a solução definitiva para
+                    este nicho. Clique nas abas abaixo para explorar os pilares da nossa proposta de valor.</p>
+            </div>
+            <div>
+                <div class="tabs-container">
+                    <button class="tab-button tab-active" data-tab="1">Plataforma Focada</button>
+                    <button class="tab-button tab-inactive" data-tab="2">Validação Inteligente</button>
+                    <button class="tab-button tab-inactive" data-tab="3">Gestão Multiempresa</button>
+                    <button class="tab-button tab-inactive" data-tab="4">Relatórios Estratégicos</button>
+                </div>
+                <div id="tab-content" class="tab-content-wrapper">
+                    <div class="tab-pane active" data-tab-content="1">
+                        <h3 class="tab-pane-title">Plataforma SaaS Focada</h3>
+                        <p class="tab-pane-text">Centraliza a gestão de NF-e, CT-e e NFS-e em um painel único, leve e
+                            100% web. Sem necessidade de instalações complexas, o DIT-X oferece uma experiência de
+                            usuário fluida e intuitiva, permitindo que as equipes se concentrem no que realmente
+                            importa.</p>
+                    </div>
+                    <div class="tab-pane hidden" data-tab-content="2">
+                        <h3 class="tab-pane-title">Validação Inteligente e Automática</h3>
+                        <p class="tab-pane-text">Nosso motor fiscal analisa e valida automaticamente as regras fiscais
+                            mais críticas (CFOP, alíquotas, CNPJs), prevenindo erros antes que eles se tornem um
+                            problema. Alertas proativos garantem conformidade e tranquilidade.</p>
+                    </div>
+                    <div class="tab-pane hidden" data-tab-content="3">
+                        <h3 class="tab-pane-title">Gestão Multiempresa Nativa</h3>
+                        <p class="tab-pane-text">Projetado desde o início para contadores e gestores que lidam com
+                            múltiplos CNPJs. Permite que um único usuário administre dezenas de empresas de forma
+                            organizada e eficiente, trocando de contexto com apenas um clique.</p>
+                    </div>
+                    <div class="tab-pane hidden" data-tab-content="4">
+                        <h3 class="tab-pane-title">Relatórios Estratégicos</h3>
+                        <p class="tab-pane-text">Gera relatórios fiscais claros e exportáveis (Excel, PDF) com filtros
+                            poderosos. Otimiza o fechamento mensal, fornece insights para a tomada de decisão e
+                            simplifica a prestação de contas para clientes e diretoria.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+        <section id="jornada" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">A Jornada de Desenvolvimento</h2>
+                <p class="section-subtitle">Temos um plano claro e objetivo para entregar o MVP em 4 meses. Cada etapa possui marcos e entregáveis bem definidos, garantindo agilidade e foco. Clique em cada fase para ver os detalhes.</p>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-nav">
+                    <div id="timeline-list">
+                        <div class="timeline-item timeline-item-active" data-timeline="1">
+                            <h4 class="timeline-item-title">Mês 1: Estrutura e Base</h4>
+                            <p class="timeline-item-subtitle">Fundação técnica do projeto.</p>
+                        </div>
+                        <div class="timeline-item" data-timeline="2">
+                            <h4 class="timeline-item-title">Mês 2: Motor Fiscal</h4>
+                            <p class="timeline-item-subtitle">Desenvolvimento do core da aplicação.</p>
+                        </div>
+                        <div class="timeline-item" data-timeline="3">
+                            <h4 class="timeline-item-title">Mês 3: Interface e Experiência</h4>
+                            <p class="timeline-item-subtitle">Criação da experiência do usuário.</p>
+                        </div>
+                        <div class="timeline-item" data-timeline="4">
+                            <h4 class="timeline-item-title">Mês 4: Refinamento e Piloto</h4>
+                            <p class="timeline-item-subtitle">Testes e lançamento da versão beta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content-wrapper">
+                    <div id="timeline-content">
+                        <div class="timeline-pane" data-timeline-content="1">
+                            <h3 class="timeline-pane-title">Marco 1: Infraestrutura Cloud Funcional</h3>
+                            <p class="timeline-pane-text">Nesta fase, o foco é ter a plataforma no ar, segura e pronta para os próximos passos. Os entregáveis incluem o setup completo da infraestrutura cloud (Firebase/Supabase), a configuração do banco de dados (PostgreSQL) e a implementação do sistema de autenticação e segurança.</p>
+                        </div>
+                        <div class="timeline-pane hidden" data-timeline-content="2">
+                            <h3 class="timeline-pane-title">Marco 2: Motor de Validação Operante</h3>
+                            <p class="timeline-pane-text">Aqui, desenvolvemos a inteligência central do DIT-X. O objetivo é ter o motor de validação fiscal funcionando, com as principais regras para NF-e e CT-e implementadas. A importação de XML em lote também será entregue, garantindo a principal proposta de valor do produto.</p>
+                        </div>
+                        <div class="timeline-pane hidden" data-timeline-content="3">
+                            <h3 class="timeline-pane-title">Marco 3: MVP Funcional para Demonstração</h3>
+                            <p class="timeline-pane-text">Com o backend pronto, construímos a interface que o usuário irá interagir. Entregaremos o dashboard principal, as telas de consulta de notas, o módulo de geração de relatórios e o sistema de alertas, resultando em uma versão completa e funcional para demonstrações.</p>
+                        </div>
+                        <div class="timeline-pane hidden" data-timeline-content="4">
+                            <h3 class="timeline-pane-title">Marco 4: Início do Programa Piloto</h3>
+                            <p class="timeline-pane-text">A fase final do MVP consiste em testes de ponta a ponta e correções de bugs. O grande marco é o lançamento da versão beta para um grupo selecionado de clientes-piloto, que nos fornecerão feedback valioso para o aprimoramento contínuo da solução.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
+
+        <section id="crescimento" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">Visão de Futuro e Crescimento</h2>
+                <p class="section-subtitle">O MVP é apenas o começo. Nossa estratégia de crescimento é sustentável e
+                    focada em escalar o valor entregue aos nossos clientes e ao negócio.</p>
+            </div>
+            <div class="growth-grid">
+                <div class="chart-card">
+                    <h3 class="chart-title">Potencial de Mercado</h3>
+                    <div class="chart-container">
+                        <canvas id="marketChart"></canvas>
+                    </div>
+                    <p class="chart-caption">O ponto de equilíbrio é atingido com apenas 40 a 60 clientes, representando
+                        uma fração mínima do mercado potencial estimado em mais de 7.000 empresas.</p>
+                </div>
+                <div class="growth-steps">
+                    <div class="growth-step-card">
+                        <h4 class="growth-step-title">1. Lançamento e Feedback</h4>
+                        <p class="growth-step-text">Iniciar o programa piloto para coletar feedback estratégico e
+                            ajustar as prioridades do roadmap com base no uso real.</p>
+                    </div>
+                    <div class="growth-step-card">
+                        <h4 class="growth-step-title">2. Evolução do Produto</h4>
+                        <p class="growth-step-text">Expandir funcionalidades de alto valor, como integrações com APIs de
+                            NFS-e, dashboards de BI e relatórios avançados.</p>
+                    </div>
+                    <div class="growth-step-card">
+                        <h4 class="growth-step-title">3. Escala Comercial</h4>
+                        <p class="growth-step-text">Estruturar as equipes de vendas e marketing para acelerar a
+                            aquisição de clientes e consolidar o DIT-X como referência no nicho.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <div class="container">
+            <h2 class="footer-title">DIT-X</h2>
+            <a href="[https://www.instagram.com/xdit_fiscal/](https://www.instagram.com/xdit_fiscal/)"></a>
+            <a href="#">Contato</a>
+            <a href="#">Equipe</a>
+            <p class="footer-subtitle">Inteligência Fiscal. Simples e Acessível.</p>
+            <p class="footer-copy">&copy; 2025 DIT-X. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
