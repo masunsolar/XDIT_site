@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIT-X: Proposta Interativa de Projeto</title>
+    <title>X-Dit: Proposta Interativa de Projeto</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./images/ICON_XDIT.jpeg">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body class="antialiased">
@@ -21,11 +21,20 @@
         <nav class="container main-nav">
             <div class="nav-logo">
                 <img src="./images/logoXDIT.png" alt="Logo">
-                <h1 class="logo">XDIT</h1>
+                <h1 class="logo">X-DIT</h1>
             </div>
 
             <div class="nav-links">
-                <a href="#">Serviços</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        Serviços <i class='bx bx-chevron-down'></i> </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Consultoria Fiscal</a>
+                        <a href="#" class="dropdown-item">Emissão de NF-e</a>
+                        <a href="#" class="dropdown-item">Validação de CT-e</a>
+                        <a href="#" class="dropdown-item">Relatórios Personalizados</a>
+                    </div>
+                </div>
                 <a href="#">Sobre</a>
                 <a href="#crescimento" class="nav-link">Crescimento</a>
                 <a href="#">Contato</a>
@@ -35,7 +44,6 @@
     </header>
 
     <main class="container main-content">
-
         <section class="main">
             <div class="main-text">
                 <h1>SAIBA SE A SUA EMPRESA ESTÁ EM DIA AGORA</h1>
@@ -48,7 +56,7 @@
         </section>
 
         <section class="page-section intro-section">
-            <h1 class="main-title">Proposta Interativa do Projeto DIT-X</h1>
+            <h1 class="main-title">Proposta Interativa do Projeto X-Dit</h1>
             <p class="main-subtitle">Transformando a complexidade fiscal em uma vantagem estratégica através de uma
                 plataforma SaaS inteligente, focada e acessível.</p>
         </section>
@@ -84,8 +92,8 @@
 
         <section id="solucao" class="page-section">
             <div class="section-header">
-                <h2 class="section-title">Nossa Solução: DIT-X</h2>
-                <p class="section-subtitle">O DIT-X é uma plataforma SaaS projetada para ser a solução definitiva para
+                <h2 class="section-title">Nossa Solução: X-Dit</h2>
+                <p class="section-subtitle">O X-Dit é uma plataforma SaaS projetada para ser a solução definitiva para
                     este nicho. Clique nas abas abaixo para explorar os pilares da nossa proposta de valor.</p>
             </div>
             <div>
@@ -99,7 +107,7 @@
                     <div class="tab-pane active" data-tab-content="1">
                         <h3 class="tab-pane-title">Plataforma SaaS Focada</h3>
                         <p class="tab-pane-text">Centraliza a gestão de NF-e, CT-e e NFS-e em um painel único, leve e
-                            100% web. Sem necessidade de instalações complexas, o DIT-X oferece uma experiência de
+                            100% web. Sem necessidade de instalações complexas, o X-Dit oferece uma experiência de
                             usuário fluida e intuitiva, permitindo que as equipes se concentrem no que realmente
                             importa.</p>
                     </div>
@@ -160,7 +168,7 @@
                         </div>
                         <div class="timeline-pane hidden" data-timeline-content="2">
                             <h3 class="timeline-pane-title">Marco 2: Motor de Validação Operante</h3>
-                            <p class="timeline-pane-text">Aqui, desenvolvemos a inteligência central do DIT-X. O objetivo é ter o motor de validação fiscal funcionando, com as principais regras para NF-e e CT-e implementadas. A importação de XML em lote também será entregue, garantindo a principal proposta de valor do produto.</p>
+                            <p class="timeline-pane-text">Aqui, desenvolvemos a inteligência central do X-Dit. O objetivo é ter o motor de validação fiscal funcionando, com as principais regras para NF-e e CT-e implementadas. A importação de XML em lote também será entregue, garantindo a principal proposta de valor do produto.</p>
                         </div>
                         <div class="timeline-pane hidden" data-timeline-content="3">
                             <h3 class="timeline-pane-title">Marco 3: MVP Funcional para Demonstração</h3>
@@ -205,7 +213,7 @@
                     <div class="growth-step-card">
                         <h4 class="growth-step-title">3. Escala Comercial</h4>
                         <p class="growth-step-text">Estruturar as equipes de vendas e marketing para acelerar a
-                            aquisição de clientes e consolidar o DIT-X como referência no nicho.</p>
+                            aquisição de clientes e consolidar o X-Dit como referência no nicho.</p>
                     </div>
                 </div>
             </div>
@@ -221,12 +229,12 @@
             <div class="wave" id="wave4"></div>
         </div>
         <div class="container">
-            <h2 class="footer-title">DIT-X</h2>
+            <h2 class="footer-title">X-Dit</h2>
             <a href="[https://www.instagram.com/xdit_fiscal/](https://www.instagram.com/xdit_fiscal/)"></a>
             <a href="#">Contato</a>
             <a href="#">Equipe</a>
             <p class="footer-subtitle">Inteligência Fiscal. Simples e Acessível.</p>
-            <p class="footer-copy">&copy; 2025 DIT-X. Todos os direitos reservados.</p>
+            <p class="footer-copy">&copy; 2025 X-Dit. Todos os direitos reservados.</p>
         </div>
     </footer>
 </body>

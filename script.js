@@ -102,3 +102,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona todos os links que são ativadores de dropdown
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        // O menu dropdown é o elemento irmão que vem logo depois do toggle
+        const dropdownMenu = toggle.nextElementSibling; 
+
+        // Adiciona um evento de clique para abrir/fechar o dropdown
+        toggle.addEventListener('click', (event) => {
+            event.preventDefault(); // Impede a navegação padrão do link
+            dropdownMenu.classList.toggle('active'); // Alterna a classe 'active' para mostrar/esconder
+
+            // Fecha outros dropdowns abertos (opcional, mas boa prática)
+            document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                if (menu !== dropdownMenu) { // Se não for o menu que acabamos de clicar
+                    menu.classList.remove('active'); // Remove a classe 'active' para fechar
+                }
+            });
+        });
+
+        // Adiciona um evento para fechar o dropdown quando o mouse sai da área inteira do 'dropdown'
+        // Isso pega o pai 'div.dropdown' para que o menu permaneça aberto enquanto o mouse está nele.
+        const dropdownParent = toggle.closest('.dropdown');
+        if (dropdownParent) {
+            dropdownParent.addEventListener('mouseleave', () => {
+                dropdownMenu.classList.remove('active');
+            });
+        }
+    });
+
+    // Adiciona um evento global para fechar qualquer dropdown aberto se o usuário clicar fora dele
+    document.addEventListener('click', (event) => {
+        // Se o clique não foi dentro de um elemento com a classe 'dropdown'
+        if (!event.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu.active').forEach(menu => {
+                menu.classList.remove('active'); // Fecha todos os menus abertos
+            });
+        }
+    });
+});

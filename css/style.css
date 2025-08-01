@@ -1,0 +1,88 @@
+@import url('./vendors/fonts.css');
+@import url('./base/reset.css'); /* Pode ser criado se houver resets básicos */
+@import url('./base/typography.css');
+@import url('./base/utilities.css');
+
+@import url('./layout/container.css');
+@import url('./layout/header.css');
+@import url('./layout/main-sections.css');
+@import url('./layout/footer.css');
+
+@import url('./components/buttons.css');
+@import url('./components/cards.css');
+@import url('./components/tabs.css');
+@import url('./components/timeline.css');
+@import url('./components/charts.css');
+@import url('./components/dropdown.css');
+
+/* Media Queries Globais ou Ajustes Finais */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+    .main-content {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    .page-section {
+        margin-bottom: 6rem;
+    }
+    .main-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+    .main-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    .challenge-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .tabs-container {
+        gap: 1rem;
+    }
+    .tab-button {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+    .timeline-wrapper {
+        flex-direction: row;
+    }
+    .timeline-nav {
+        width: 33.333333%;
+    }
+    .timeline-content-wrapper {
+        width: 66.666667%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+    .growth-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}

@@ -1,0 +1,21 @@
+/* Functional Classes (from original inline style) */
+.tab-active {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+.tab-inactive {
+    background-color: #ffffff;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+.timeline-item-active {
+    border-color: #2563eb;
+    transform: scale(1.02);
+}
+
+.hidden {
+    display: none;
+}

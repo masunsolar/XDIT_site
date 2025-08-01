@@ -1,0 +1,54 @@
+/* Estilos para o Dropdown */
+.dropdown {
+    position: relative; /* Essencial para posicionar o submenu em relação a este item */
+    display: inline-block; /* Permite que o dropdown seja posicionado corretamente dentro do nav-links */
+}
+
+.dropdown-menu {
+    display: none; /* Por padrão, o submenu está escondido */
+    position: absolute; /* Posição absoluta em relação ao .dropdown */
+    background-color: #ffffff;
+    min-width: 180px; /* Largura mínima do submenu */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 100; /* Garante que o menu fique acima de outros elementos */
+    padding: 10px 0; /* Espaçamento interno do menu */
+    border-radius: 0.5rem; /* Borda arredondada */
+    top: 100%; /* Posiciona o menu abaixo do link principal */
+    left: 0;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #4b5563;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* Cada item ocupa sua própria linha */
+    text-align: left; /* Alinha o texto à esquerda */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+    color: #2563eb;
+}
+
+/* Mostra o submenu quando o mouse passa sobre o .dropdown */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Estilo para o link principal do dropdown quando hover */
+/* Ajustado para alinhar o texto e o ícone, e manter o hover do nav-link */
+.nav-link.dropdown-toggle {
+    display: flex; /* Para alinhar o texto e o ícone */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 5px; /* Espaço entre o texto e o ícone */
+}
+
+.nav-link.dropdown-toggle:hover {
+    color: #2563eb; /* Para manter o mesmo efeito de hover do nav-link */
+}
+
+/* Regra para exibir o menu via JavaScript (para acessibilidade e clique) */
+.dropdown-menu.active {
+    display: block;
+}

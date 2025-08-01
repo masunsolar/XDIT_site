@@ -1,0 +1,13 @@
+.primary-btn {
+    margin: 0 auto;
+    display: block;
+    padding: 16px 32px;
+    width: 400px;
+    color: white;
+    background: #1c1f2b;
+    text-align: center;
+    border-radius: 50px;
+    position: relative;
+    font-size: 1.2em;
+    font-weight: 700;
+}

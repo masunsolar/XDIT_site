@@ -1,0 +1,43 @@
+/* Header and Navigation */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%; 
+    z-index: 50;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.nav-logo img {
+    width: 64px;
+}
+
+.nav-links {
+    display: none;
+}
+
+.nav-link {
+    color: #4b5563;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}

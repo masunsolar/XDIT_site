@@ -1,0 +1,14 @@
+/* General Body and Font Styles */
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient(to bottom, #1808f911, #1808f911);
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#subtext {
+    padding-top: 8px;
+    font-weight: bold;
+    font-size: 18px;
+}
