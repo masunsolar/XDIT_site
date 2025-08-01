@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>X-Dit: Login e Cadastro</title>
 </head>
 
 <body>
-    <!---------------------------NAVIGATION --------------------------------------->
     <header>
         <div class="wrapper">
             <nav>
-                <div class="nav-logo">
-                    <p><img src="../../images/logoXDIT.png" alt="Logo"> XDIT</p>
-                </div>
+                    <div class="nav-logo">
+                        <a href="../main.html" id="nav-logo-link">
+                            <img src="../../images/logoXDIT.png" alt="Logo X-DIT"> 
+                            <h1 class="logo">X-DIT</h1>
+                        </a>
+                    </div>
             </nav>
         </div>
     </header>
-    <!---------------------------PRINCIPAL--------------------------------------------------->
+
     <main>
         <div class="form-box">
-            <!------------Login form ----------->
             <div class="login-container" id="login">
                 <div class="top">
-                    <span>Não tem uma Conta? <a href="#" onclick="register()">Cadastre-se</a></span>
+                    <span>Não tem uma Conta? <a href="#register" onclick="register()">Cadastre-se</a></span>
                     <header>Login</header>
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="CNPJ">
-                    <i class='bx bxs-building'></i>
+                <div class="input-field-container"> <div class="input-box">
+                        <input type="text" class="input-field" placeholder="CNPJ" id="cnpjLogin" inputmode="numeric" required onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <i class='bx bxs-building'></i>
+                    </div>
+                    <span class="error-message" id="cnpjLoginError">Campo obrigatório.</span> </div>
+                
+                <div class="input-field-container">
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Senha" id="loginPassword" required> <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <span class="error-message" id="loginPasswordError">Campo obrigatório.</span>
                 </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Senha">
-                    <i class="bx bx-lock-alt"></i>
-                </div>
+                
                 <div class="input-box">
                     <input type="submit" class="submit" value="Entrar">
                 </div>
@@ -46,43 +52,60 @@
                         <label for="login-check"> Remember Me</label>
                     </div>
                     <div class="two">
-                        <label><a href="#">| Esqueceu a Senha?</a></label>
+                        <label><a href="#">Esqueceu a Senha?</a></label>
                     </div>
                 </div>
             </div>
 
-            <!------------Registration form ----------->
             <div class="register-container" id="register">
                 <div class="top">
                     <span>Já tem uma conta? <a href="#" onclick="login()">Login</a></span>
-                    <header>Sign Up</head>
+                    <header>Sign Up</header>
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="CNPJ">
-                    <i class='bx bxs-building'></i>
+                <div class="input-field-container">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="CNPJ" required id="cnpjRegister" inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                        <i class='bx bxs-building'></i>
+                    </div>
+                    <span class="error-message" id="cnpjRegisterError">Campo obrigatório.</span>
                 </div>
                 <div class="two-forms">
-                    <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Nome">
-                        <i class="bx bx-user"></i>
+                    <div class="input-field-container">
+                        <div class="input-box">
+                            <input type="text" class="input-field" placeholder="Nome" id="registerName" required> <i class="bx bx-user"></i>
+                        </div>
+                        <span class="error-message" id="registerNameError">Campo obrigatório.</span>
                     </div>
-                    <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Sobrenome">
-                        <i class="bx bx-user"></i>
+                    <div class="input-field-container">
+                        <div class="input-box">
+                            <input type="text" class="input-field" placeholder="Sobrenome" id="registerSurname" required> <i class="bx bx-user"></i>
+                        </div>
+                        <span class="error-message" id="registerSurnameError">Campo obrigatório.</span>
                     </div>
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="Email">
-                    <i class="bx bx-envelope"></i>
+                <div class="input-field-container">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Email" id="emailRegister" required>
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <span class="error-message" id="emailRegisterError">Campo obrigatório.</span>
                 </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Senha">
-                    <i class="bx bx-lock-alt"></i>
+                <div class="input-field-container">
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Senha" id="registerPassword" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <span class="error-message" id="registerPasswordError">Campo obrigatório.</span>
                 </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Confirma a Senha">
-                    <i class="bx bx-lock-alt"></i>
+                <div class="input-field-container">
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Confirma a Senha" id="confirmPassword" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <span class="error-message" id="confirmPasswordError">Campo obrigatório.</span>
+                    <p id="passwordMismatchMessage" style="color: red; font-size: 0.9em; margin-top: 5px; display: none;">As senhas não coincidem.</p>
                 </div>
+
                 <div class="input-box">
                     <input type="submit" class="submit" value="Registrar">
                 </div>
@@ -97,30 +120,8 @@
                 </div>
             </div>
         </div>
-        </div>
     </main>
-    <!----------------------------------------------FOOTER-------------------------------------->
-    <footer>
-        <div class="waves">
-            <div class="wave" id="wave1"></div>
-            <div class="wave" id="wave2"></div>
-            <div class="wave" id="wave3"></div>
-            <div class="wave" id="wave4"></div>
-        </div>
-        <ul class="social_icon">
-            <li><a href="https://www.instagram.com/xdit_fiscal/"></a><i class='bx bxl-linkedin-square'></i></li>
-            <li><a href="#"></a><i class='bx bxl-instagram'></i></li>
-        </ul>
-        <ul class="menu">
-            <li><a href="#">Contato</a></li>
-            <li><a href="#">Equipe</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Início</a></li>
-        </ul>
-        <p>2025 X-Dit Company| All Rights Reserved</p>
-    </footer>
-    </main>
+
     <script src="script.js"></script>
 </body>
 
