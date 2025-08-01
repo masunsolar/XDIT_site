@@ -64,7 +64,7 @@ XDIT/
 2. **Clonar o repositório:**
 
 ```bash
-git clone https://github.com/seu-usuario/xdit.git
+git clone https://github.com/masunsolar/XDIT_site
 cd xdit
 ```
 
