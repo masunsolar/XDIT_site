@@ -1,19 +1,14 @@
-// --- Funções para alternar entre login e registro ---
-var x = document.getElementById("login");
-var y = document.getElementById("register");
+// Seleciona o container principal
+const formBox = document.querySelector('.form-box');
 
-function login() {
-    x.style.left = "4px";
-    y.style.right = "-520px";
-    // Limpar validações quando mudar de formulário
-    clearAllFormValidations();
+// Função para mostrar o formulário de cadastro
+function showRegisterForm() {
+    formBox.classList.add('active');
 }
 
-function register() {
-    x.style.left = "-510px";
-    y.style.right = "5px";
-    // Limpar validações quando mudar de formulário
-    clearAllFormValidations();
+// Função para mostrar o formulário de login
+function showLoginForm() {
+    formBox.classList.remove('active');
 }
 
 // --- Funções de Máscara de Input e Verificação de Senha ---

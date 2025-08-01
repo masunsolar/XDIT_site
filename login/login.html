@@ -27,95 +27,68 @@
         <div class="form-box">
             <div class="login-container" id="login">
                 <div class="top">
-                    <span>Não tem uma Conta? <a href="#register" onclick="register()">Cadastre-se</a></span>
+                    <span>Não tem uma conta? <a href="#" onclick="showRegisterForm()">Cadastre-se</a></span>
                     <header>Login</header>
                 </div>
-                <div class="input-field-container"> <div class="input-box">
-                        <input type="text" class="input-field" placeholder="CNPJ" id="cnpjLogin" inputmode="numeric" required onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                        <i class='bx bxs-building'></i>
-                    </div>
-                    <span class="error-message" id="cnpjLoginError">Campo obrigatório.</span> </div>
-                
-                <div class="input-field-container">
-                    <div class="input-box">
-                        <input type="password" class="input-field" placeholder="Senha" id="loginPassword" required> <i class="bx bx-lock-alt"></i>
-                    </div>
-                    <span class="error-message" id="loginPasswordError">Campo obrigatório.</span>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="CNPJ">
+                    <i class='bx bxs-building'></i>
                 </div>
-                
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Senha">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
                 <div class="input-box">
                     <input type="submit" class="submit" value="Entrar">
                 </div>
                 <div class="two-col">
                     <div class="one">
                         <input type="checkbox" id="login-check">
-                        <label for="login-check"> Remember Me</label>
+                        <label for="login-check"> Lembrar de mim</label>
                     </div>
                     <div class="two">
-                        <label><a href="#">Esqueceu a Senha?</a></label>
+                        <label><a href="#">Esqueceu a senha?</a></label>
                     </div>
                 </div>
             </div>
 
             <div class="register-container" id="register">
                 <div class="top">
-                    <span>Já tem uma conta? <a href="#" onclick="login()">Login</a></span>
-                    <header>Sign Up</header>
+                    <span>Já tem uma conta? <a href="#" onclick="showLoginForm()">Login</a></span>
+                    <header>Sign up</header>
                 </div>
-                <div class="input-field-container">
-                    <div class="input-box">
-                        <input type="text" class="input-field" placeholder="CNPJ" required id="cnpjRegister" inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                        <i class='bx bxs-building'></i>
-                    </div>
-                    <span class="error-message" id="cnpjRegisterError">Campo obrigatório.</span>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="CNPJ">
+                    <i class='bx bxs-building'></i>
                 </div>
                 <div class="two-forms">
-                    <div class="input-field-container">
-                        <div class="input-box">
-                            <input type="text" class="input-field" placeholder="Nome" id="registerName" required> <i class="bx bx-user"></i>
-                        </div>
-                        <span class="error-message" id="registerNameError">Campo obrigatório.</span>
-                    </div>
-                    <div class="input-field-container">
-                        <div class="input-box">
-                            <input type="text" class="input-field" placeholder="Sobrenome" id="registerSurname" required> <i class="bx bx-user"></i>
-                        </div>
-                        <span class="error-message" id="registerSurnameError">Campo obrigatório.</span>
-                    </div>
-                </div>
-                <div class="input-field-container">
                     <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Email" id="emailRegister" required>
-                        <i class="bx bx-envelope"></i>
+                        <input type="text" class="input-field" placeholder="Nome">
+                        <i class="bx bx-user"></i>
                     </div>
-                    <span class="error-message" id="emailRegisterError">Campo obrigatório.</span>
-                </div>
-                <div class="input-field-container">
                     <div class="input-box">
-                        <input type="password" class="input-field" placeholder="Senha" id="registerPassword" required>
-                        <i class="bx bx-lock-alt"></i>
+                        <input type="text" class="input-field" placeholder="Sobrenome">
+                        <i class="bx bx-user"></i>
                     </div>
-                    <span class="error-message" id="registerPasswordError">Campo obrigatório.</span>
                 </div>
-                <div class="input-field-container">
-                    <div class="input-box">
-                        <input type="password" class="input-field" placeholder="Confirma a Senha" id="confirmPassword" required>
-                        <i class="bx bx-lock-alt"></i>
-                    </div>
-                    <span class="error-message" id="confirmPasswordError">Campo obrigatório.</span>
-                    <p id="passwordMismatchMessage" style="color: red; font-size: 0.9em; margin-top: 5px; display: none;">As senhas não coincidem.</p>
+                <div class="input-box">
+                    <input type="email" class="input-field" placeholder="Email">
+                    <i class="bx bx-envelope"></i>
                 </div>
-
+                <div class="input-box">
+                    <input type="password" class="input-field" placeholder="Senha">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
                 <div class="input-box">
                     <input type="submit" class="submit" value="Registrar">
                 </div>
                 <div class="two-col">
                     <div class="one">
                         <input type="checkbox" id="register-check">
-                        <label for="register-check"> Remember Me</label>
+                        <label for="register-check"> Lembrar de mim</label>
                     </div>
                     <div class="two">
-                        <label><a href="#">Terms & conditions</a></label>
+                        <label><a href="#">Termos & condições</a></label>
                     </div>
                 </div>
             </div>
@@ -123,6 +96,6 @@
     </main>
 
     <script src="script.js"></script>
-</body>
 
+</body>
 </html>

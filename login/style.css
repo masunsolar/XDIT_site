@@ -19,7 +19,10 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 110vh;
+  min-height: 100vh;
+  /* Alterado para 100vh para centralização vertical */
+  padding: 20px;
+  /* Adicionado padding para evitar que o conteúdo encoste nas bordas em telas menores */
 }
 
 /*============================================================================ NAVIGATION BAR ==========================*/
@@ -44,39 +47,60 @@ nav {
   width: 2.4em;
 }
 
-#nav-logo-link{
+#nav-logo-link {
   text-decoration: none;
   color: #fff;
 }
 
-/*=========================================================================== PRINCIPAL ================================*/
+/*========================================= PRINCIPAL ================================*/
 .form-box {
   position: relative;
-  display: flex;
-  align-items: center;
-  width: 512px;
-  justify-content: center;
-  height: 600px;
+  width: 450px;
+  height: 700px;
+  border-radius: 20px;
+  padding: 30px;
   overflow: hidden;
-  z-index: 2;
+  backdrop-filter: blur(10px);
+  transition: height 0.6s ease-in-out;
 }
 
-.login-container {
+/* Estilo comum para ambos os formulários */
+.login-container,
+.register-container {
   position: absolute;
-  left: 4px;
+  width: calc(100% - 60px);
+  left: 30px;
+  top: 60px;
   display: flex;
   flex-direction: column;
-  width: 500px;
-  transition: .5s ease-in-out;
+  gap: 20px;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* ESTADO INICIAL */
+.login-container {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .register-container {
-  position: absolute;
-  right: -520px;
-  display: flex;
-  flex-direction: column;
-  width: 500px;
-  transition: .5s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ESTADO ATIVO (quando a classe .active é adicionada ao .form-box) */
+.form-box.active .login-container {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-box.active .register-container {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .top span {
@@ -91,6 +115,13 @@ nav {
   font-weight: 500;
   color: #fff;
   margin-left: 5px;
+  text-decoration: none;
+  /* Garante que o link não tenha sublinhado por padrão */
+}
+
+.top span a:hover {
+  text-decoration: underline;
+  /* Adiciona sublinhado ao passar o mouse */
 }
 
 header {
@@ -192,7 +223,6 @@ header {
   margin-bottom: 15px;
   position: relative;
 }
-
 
 .input-box {
   margin-bottom: 0;
