@@ -1,0 +1,136 @@
+/* Footer */
+.main-footer{
+    background-color: #0A2540;
+}
+
+.main-footer .footer-inner {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+}
+
+.main-footer .footer-section {
+    flex-basis: 25%;
+    min-width: 200px;
+    margin-bottom: 2em;
+}
+
+.main-footer .footer-section h4 {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.main-footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-footer .footer-section ul li {
+    margin-bottom: 0.8em;
+}
+
+.main-footer .footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-footer .footer-section ul li a:hover {
+    color: white;
+}
+
+.main-footer .footer-section p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+.main-footer .footer-section .social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.main-footer .footer-section .social-links a img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.main-footer .footer-section .social-links a img:hover {
+    opacity: 1;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .header-inner {
+        position: relative;
+    }
+
+    .header-inner button.menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #0A2540;
+        cursor: pointer;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-section .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-section .pricing-card {
+        margin-bottom: 30px;
+    }
+
+    .pricing-section .pricing-card.popular {
+        margin-top: 15px;
+    }
+
+    .main-footer .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-footer .footer-section {
+        width: 80%;
+        margin-bottom: 3em;
+    }
+}

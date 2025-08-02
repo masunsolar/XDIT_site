@@ -96,7 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 passwordMismatchMessage.style.display = 'none'; // Esconde se algum estiver vazio
                 confirmPasswordField.classList.remove('error');
                 registerPasswordField.classList.remove('error');
-                if (confPassParent) confPassParent.classList.remove('has-error');
+                // Adiciona has-error se o campo de confirmação estiver vazio
+                if (confPassParent) {
+                    if (confirmPassword === '') {
+                        confPassParent.classList.add('has-error');
+                    } else {
+                        confPassParent.classList.remove('has-error');
+                    }
+                }
             }
         }
     }
