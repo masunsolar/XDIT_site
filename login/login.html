@@ -13,12 +13,12 @@
     <header>
         <div class="wrapper">
             <nav>
-                    <div class="nav-logo">
-                        <a href="../main.html" id="nav-logo-link">
-                            <img src="../../images/logoXDIT.png" alt="Logo X-DIT"> 
-                            <h1 class="logo">X-DIT</h1>
-                        </a>
-                    </div>
+                <div class="nav-logo">
+                    <a href="../main.html" id="nav-logo-link">
+                        <img src="../../images/logoXDIT.png" alt="Logo X-DIT">
+                        <h1 class="logo">X-DIT</h1>
+                    </a>
+                </div>
             </nav>
         </div>
     </header>
@@ -30,13 +30,15 @@
                     <span>Não tem uma conta? <a href="#" onclick="showRegisterForm()">Cadastre-se</a></span>
                     <header>Login</header>
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="CNPJ">
+                <div class="input-box input-field-container">
+                    <input type="text" class="input-field" id="cnpjLogin" placeholder="CNPJ" required>
                     <i class='bx bxs-building'></i>
+                    <span class="error-message" id="cnpjLoginError">Este campo é obrigatório.</span>
                 </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Senha">
+                <div class="input-box input-field-container">
+                    <input type="password" class="input-field" id="senhaLogin" placeholder="Senha" required>
                     <i class="bx bx-lock-alt"></i>
+                    <span class="error-message" id="senhaLoginError">Este campo é obrigatório.</span>
                 </div>
                 <div class="input-box">
                     <input type="submit" class="submit" value="Entrar">
@@ -57,27 +59,39 @@
                     <span>Já tem uma conta? <a href="#" onclick="showLoginForm()">Login</a></span>
                     <header>Sign up</header>
                 </div>
-                <div class="input-box">
-                    <input type="text" class="input-field" placeholder="CNPJ">
+                <div class="input-box input-field-container">
+                    <input type="text" class="input-field" id="cnpjRegister" placeholder="CNPJ" required>
                     <i class='bx bxs-building'></i>
+                    <span class="error-message" id="cnpjRegisterError">Este campo é obrigatório.</span>
                 </div>
                 <div class="two-forms">
-                    <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Nome">
+                    <div class="input-box input-field-container">
+                        <input type="text" class="input-field" id="nomeRegister" placeholder="Nome" required>
                         <i class="bx bx-user"></i>
+                        <span class="error-message" id="nomeRegisterError">Este campo é obrigatório.</span>
                     </div>
-                    <div class="input-box">
-                        <input type="text" class="input-field" placeholder="Sobrenome">
+                    <div class="input-box input-field-container">
+                        <input type="text" class="input-field" id="sobrenomeRegister" placeholder="Sobrenome" required>
                         <i class="bx bx-user"></i>
+                        <span class="error-message" id="sobrenomeRegisterError">Este campo é obrigatório.</span>
                     </div>
                 </div>
-                <div class="input-box">
-                    <input type="email" class="input-field" placeholder="Email">
+                <div class="input-box input-field-container">
+                    <input type="email" class="input-field" id="emailRegister" placeholder="Email" required>
                     <i class="bx bx-envelope"></i>
+                    <span class="error-message" id="emailRegisterError">Este campo é obrigatório.</span>
                 </div>
-                <div class="input-box">
-                    <input type="password" class="input-field" placeholder="Senha">
+                <div class="input-box input-field-container">
+                    <input type="password" class="input-field" id="registerPassword" placeholder="Senha" required>
                     <i class="bx bx-lock-alt"></i>
+                    <span class="error-message" id="registerPasswordError">Este campo é obrigatório.</span>
+                </div>
+                <div class="input-box input-field-container">
+                    <input type="password" class="input-field" id="confirmPassword" placeholder="Confirmar Senha"required>
+                    <i class="bx bx-lock-alt"></i>
+                    <span class="error-message" id="confirmPasswordError">Este campo é obrigatório.</span>
+                    <span class="error-message" id="passwordMismatchMessage" style="display: none;">As senhas não
+                        coincidem.</span>
                 </div>
                 <div class="input-box">
                     <input type="submit" class="submit" value="Registrar">
@@ -98,4 +112,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>

@@ -93,13 +93,32 @@ Quer contribuir com o desenvolvimento do X-DIT? Siga estes passos:
 
 Sinta-se à vontade para abrir **issues** com sugestões ou bugs encontrados.
 
+## Problemas:
+
+### Tela de [login](https://github.com/masunsolar/XDIT_site/tree/main/login)
+- Mensagem de erro não somem quando vc troca de tela em cadastrar para login
+- Falta de espaçamento para mensagem de erro, ele não adiciona espaço entre a mensagem e a caixa debaixo
+- Formatar para celular
+
+### Tela de [Principal](https://github.com/masunsolar/XDIT_site/blob/main/main.html)
+- Ajustar conteudo
+- Arrumar a barra de navegação
+- Criar tela de serviços
+- Criar tela sobre
+- Criar tela de contato
+- Criar tela de demonstração
+- Formatar para celular
+- Corrigir design
+- Adicionar animações 
+- ... 
+
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ## Contato e Links Úteis
 
-* **Whatsapp:** [WhatsApp]((18)98118-1788) (em desenvolvimento)
+* **Whatsapp:** [WhatsApp]((18)98118-1788)
 * **E-mail:** [companyxdit@gmail.com](mailto:companyxdit@gmail.com)
 
 ---

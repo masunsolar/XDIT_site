@@ -4,11 +4,13 @@ const formBox = document.querySelector('.form-box');
 // Função para mostrar o formulário de cadastro
 function showRegisterForm() {
     formBox.classList.add('active');
+    clearAllFormValidations(); // Limpa validações ao trocar de formulário
 }
 
 // Função para mostrar o formulário de login
 function showLoginForm() {
     formBox.classList.remove('active');
+    clearAllFormValidations(); // Limpa validações ao trocar de formulário
 }
 
 // --- Funções de Máscara de Input e Verificação de Senha ---
@@ -73,74 +75,85 @@ document.addEventListener('DOMContentLoaded', () => {
             validateField(registerPasswordField, 'registerPasswordError');
             validateField(confirmPasswordField, 'confirmPasswordError');
 
-            // Em seguida, verifique se as senhas coincidem, mas apenas se ambos tiverem algum valor
+            // Em seguida, verifique se as senhas coincidem, mas apenas se ambos tiverem algum valor e não estiverem vazios
             if (password !== '' && confirmPassword !== '') {
                 if (password !== confirmPassword) {
                     passwordMismatchMessage.style.display = 'block'; // Mostra mensagem de "não coincide"
                     confirmPasswordField.classList.add('error');
                     registerPasswordField.classList.add('error');
+                    // Adiciona has-error aos pais se as senhas não coincidirem
+                    const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
+                    const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
+                    if (regPassParent) regPassParent.classList.add('has-error');
+                    if (confPassParent) confPassParent.classList.add('has-error');
                 } else {
                     passwordMismatchMessage.style.display = 'none'; // Esconde mensagem de "não coincide"
-                    // Remova a classe 'error' se coincidem e estiverem preenchidos
-                    if (confirmPasswordField.value !== '') confirmPasswordField.classList.remove('error');
-                    if (registerPasswordField.value !== '') registerPasswordField.classList.remove('error');
+                    confirmPasswordField.classList.remove('error');
+                    registerPasswordField.classList.remove('error');
+                    // Remove has-error dos pais se as senhas coincidirem
+                    const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
+                    const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
+                    if (regPassParent) regPassParent.classList.remove('has-error');
+                    if (confPassParent) confPassParent.classList.remove('has-error');
                 }
             } else {
-                 passwordMismatchMessage.style.display = 'none'; // Esconde se algum estiver vazio
+                passwordMismatchMessage.style.display = 'none'; // Esconde se algum estiver vazio
+                // Garante que a classe error e has-error sejam removidas se os campos estiverem vazios
+                confirmPasswordField.classList.remove('error');
+                registerPasswordField.classList.remove('error');
+                const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
+                const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
+                if (regPassParent) regPassParent.classList.remove('has-error');
+                if (confPassParent) confPassParent.classList.remove('has-error');
             }
         }
     }
 
     // --- Validação de Campos Obrigatórios (Geral) ---
-    const requiredFields = document.querySelectorAll(
-        '#login input[required], #register input[required]'
-    );
+    // Seleciona todos os inputs com o atributo 'required'
+    const requiredFields = document.querySelectorAll('input[required]');
 
     function validateField(inputElement, errorId) {
         const errorMessageElement = document.getElementById(errorId);
-        if (!errorMessageElement) return; // Garante que o elemento de erro existe
+        // Encontra o contêiner pai mais próximo com as classes input-box e input-field-container
+        const parentContainer = inputElement.closest('.input-box.input-field-container');
+
+        if (!errorMessageElement) return true; // Se o elemento de erro não existe, considera válido
 
         if (inputElement.value.trim() === '') {
             inputElement.classList.add('error');
             errorMessageElement.style.display = 'block';
+            if (parentContainer) {
+                parentContainer.classList.add('has-error'); // Adiciona a classe has-error ao pai
+            }
             return false;
         } else {
             inputElement.classList.remove('error');
             errorMessageElement.style.display = 'none';
+            if (parentContainer) {
+                parentContainer.classList.remove('has-error'); // Remove a classe has-error do pai
+            }
             return true;
         }
     }
 
-    // Adiciona listener 'blur' para cada campo obrigatório
+    // Adiciona listener 'blur' e 'input' para cada campo obrigatório
     requiredFields.forEach(field => {
-        // Encontra o ID do span de erro correspondente
         const errorId = field.id + 'Error';
         field.addEventListener('blur', () => validateField(field, errorId));
-        field.addEventListener('input', () => validateField(field, errorId)); // Valida também ao digitar para remover o erro
+        field.addEventListener('input', () => validateField(field, errorId));
     });
 
     // --- Validação no Submit do Formulário ---
-    // Precisamos de um listener no próprio formulário, não apenas nos inputs
-    // Envolva seus inputs em tags <form> para que o submit funcione corretamente.
-    // Exemplo: <form id="loginForm"> ... inputs ... </form>
-    // Se não for um <form>, o type="submit" não irá disparar o evento "submit" do formulário.
-
-    const loginForm = document.querySelector('#login .input-box .submit').closest('div.login-container'); // Pega o contêiner do formulário de login
-    const registerForm = document.querySelector('#register .input-box .submit').closest('div.register-container'); // Pega o contêiner do formulário de registro
-
-    // Adiciona event listener para o clique no botão de submit ( workaround se não usar <form> )
-    // Idealmente, você envolveria os inputs em tags <form> e usaria form.addEventListener('submit', ...)
+    // Os botões de submit agora acionam a validação
     const loginSubmitBtn = document.querySelector('#login .submit');
     const registerSubmitBtn = document.querySelector('#register .submit');
 
     if (loginSubmitBtn) {
         loginSubmitBtn.addEventListener('click', (event) => {
-            // Se você usar um <form>, mude para event.preventDefault(); no form.addEventListener('submit')
-            // event.preventDefault(); 
             let isValid = true;
-            // Valida todos os campos obrigatórios do formulário de login
-            const loginRequiredInputs = loginForm.querySelectorAll('input[required]');
-            loginRequiredInputs.forEach(input => {
+            const loginInputs = document.querySelectorAll('#login input[required]');
+            loginInputs.forEach(input => {
                 const errorId = input.id + 'Error';
                 if (!validateField(input, errorId)) {
                     isValid = false;
@@ -150,47 +163,55 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isValid) {
                 event.preventDefault(); // Impede o envio se houver erros
             }
-            // console.log("Login form valid:", isValid); // Para depuração
         });
     }
 
     if (registerSubmitBtn) {
         registerSubmitBtn.addEventListener('click', (event) => {
-            // event.preventDefault(); 
             let isValid = true;
-            // Valida todos os campos obrigatórios do formulário de registro
-            const registerRequiredInputs = registerForm.querySelectorAll('input[required]');
-            registerRequiredInputs.forEach(input => {
+            const registerInputs = document.querySelectorAll('#register input[required]');
+            registerInputs.forEach(input => {
                 const errorId = input.id + 'Error';
                 if (!validateField(input, errorId)) {
                     isValid = false;
                 }
             });
-            
+
             // Validação específica da senha
             if (registerPasswordField && confirmPasswordField) {
                 checkPasswords(); // Força a verificação de senha no submit
-                if (passwordMismatchMessage.style.display === 'block') {
-                    isValid = false; // Se a mensagem de mismatch estiver visível, não é válido
+                if (passwordMismatchMessage.style.display === 'block' || registerPasswordField.classList.contains('error') || confirmPasswordField.classList.contains('error')) {
+                    isValid = false; // Se houver erro de senha (mismatch ou vazio), não é válido
                 }
             }
-
 
             if (!isValid) {
                 event.preventDefault(); // Impede o envio se houver erros
             }
-            // console.log("Register form valid:", isValid); // Para depuração
         });
     }
 
     // Função para limpar validações ao trocar de formulário
     function clearAllFormValidations() {
-        document.querySelectorAll('.input-field.error').forEach(input => {
-            input.classList.remove('error');
+        // Seleciona todos os inputs em AMBOS os formulários
+        const allInputs = document.querySelectorAll('.login-container input, .register-container input');
+
+        allInputs.forEach(input => {
+            input.classList.remove('error'); // Remove a classe 'error' do input
+            input.value = ''; // **Limpa o valor do campo de input**
         });
+
+        // Esconde todas as mensagens de erro
         document.querySelectorAll('.error-message').forEach(message => {
             message.style.display = 'none';
         });
+
+        // Remove a classe 'has-error' de todos os containers
+        document.querySelectorAll('.input-box.input-field-container.has-error').forEach(container => {
+            container.classList.remove('has-error');
+        });
+
+        // Garante que a mensagem de mismatch de senha também seja escondida
         if (passwordMismatchMessage) {
             passwordMismatchMessage.style.display = 'none';
         }

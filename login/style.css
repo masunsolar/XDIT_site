@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Reset básico e tipografia */
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -20,9 +21,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* Alterado para 100vh para centralização vertical */
   padding: 20px;
-  /* Adicionado padding para evitar que o conteúdo encoste nas bordas em telas menores */
 }
 
 /*============================================================================ NAVIGATION BAR ==========================*/
@@ -57,10 +56,6 @@ nav {
   position: relative;
   width: 450px;
   height: 700px;
-  border-radius: 20px;
-  padding: 30px;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
   transition: height 0.6s ease-in-out;
 }
 
@@ -70,18 +65,8 @@ nav {
   position: absolute;
   width: calc(100% - 60px);
   left: 30px;
-  top: 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  top: 30px;
   transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-}
-
-/* ESTADO INICIAL */
-.login-container {
-  transform: translateX(0);
-  opacity: 1;
-  pointer-events: all;
 }
 
 .register-container {
@@ -116,12 +101,10 @@ nav {
   color: #fff;
   margin-left: 5px;
   text-decoration: none;
-  /* Garante que o link não tenha sublinhado por padrão */
 }
 
 .top span a:hover {
   text-decoration: underline;
-  /* Adiciona sublinhado ao passar o mouse */
 }
 
 header {
@@ -158,11 +141,18 @@ header {
   color: #fff;
 }
 
-.input-box i {
+.input-box.input-field-container {
   position: relative;
-  top: -35px;
+  margin-bottom: 25px;
+}
+
+.input-box i {
+  position: absolute;
+  top: 50%;
   left: 17px;
-  color: #fff
+  transform: translateY(-50%);
+  color: #fff;
+  pointer-events: none;
 }
 
 .submit {
@@ -208,22 +198,15 @@ header {
 
 /* Estilo para inputs em estado de erro */
 .input-field.error {
-  border: 2px solid red !important;
+  border: 2px solid red;
 }
 
-/* Estilo para as mensagens de erro */
 .error-message {
   color: red;
-  font-size: 0.85em;
+  font-size: 0.80em;
   display: none;
-}
-
-/* Ajustes para o contêiner dos campos se necessário */
-.input-field-container {
-  margin-bottom: 15px;
-  position: relative;
-}
-
-.input-box {
-  margin-bottom: 0;
+  position: absolute;
+  left: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
