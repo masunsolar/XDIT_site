@@ -4,13 +4,13 @@ const formBox = document.querySelector('.form-box');
 // Função para mostrar o formulário de cadastro
 function showRegisterForm() {
     formBox.classList.add('active');
-    clearAllFormValidations(); // Limpa validações ao trocar de formulário
+    clearAllFormValidations(); 
 }
 
 // Função para mostrar o formulário de login
 function showLoginForm() {
     formBox.classList.remove('active');
-    clearAllFormValidations(); // Limpa validações ao trocar de formulário
+    clearAllFormValidations(); 
 }
 
 // --- Funções de Máscara de Input e Verificação de Senha ---
@@ -76,34 +76,26 @@ document.addEventListener('DOMContentLoaded', () => {
             validateField(confirmPasswordField, 'confirmPasswordError');
 
             // Em seguida, verifique se as senhas coincidem, mas apenas se ambos tiverem algum valor e não estiverem vazios
+            const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
+            const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
+
             if (password !== '' && confirmPassword !== '') {
                 if (password !== confirmPassword) {
                     passwordMismatchMessage.style.display = 'block'; // Mostra mensagem de "não coincide"
                     confirmPasswordField.classList.add('error');
                     registerPasswordField.classList.add('error');
-                    // Adiciona has-error aos pais se as senhas não coincidirem
-                    const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
-                    const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
-                    if (regPassParent) regPassParent.classList.add('has-error');
+                    // Adiciona has-error apenas ao container do campo de confirmação
                     if (confPassParent) confPassParent.classList.add('has-error');
                 } else {
                     passwordMismatchMessage.style.display = 'none'; // Esconde mensagem de "não coincide"
                     confirmPasswordField.classList.remove('error');
                     registerPasswordField.classList.remove('error');
-                    // Remove has-error dos pais se as senhas coincidirem
-                    const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
-                    const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
-                    if (regPassParent) regPassParent.classList.remove('has-error');
                     if (confPassParent) confPassParent.classList.remove('has-error');
                 }
             } else {
                 passwordMismatchMessage.style.display = 'none'; // Esconde se algum estiver vazio
-                // Garante que a classe error e has-error sejam removidas se os campos estiverem vazios
                 confirmPasswordField.classList.remove('error');
                 registerPasswordField.classList.remove('error');
-                const regPassParent = registerPasswordField.closest('.input-box.input-field-container');
-                const confPassParent = confirmPasswordField.closest('.input-box.input-field-container');
-                if (regPassParent) regPassParent.classList.remove('has-error');
                 if (confPassParent) confPassParent.classList.remove('has-error');
             }
         }
@@ -125,6 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessageElement.style.display = 'block';
             if (parentContainer) {
                 parentContainer.classList.add('has-error'); // Adiciona a classe has-error ao pai
+                // Detecta se a mensagem de erro quebrou para duas linhas
+                setTimeout(() => {
+                    const style = getComputedStyle(errorMessageElement);
+                    let lineHeight = parseFloat(style.lineHeight);
+                    if (isNaN(lineHeight)) {
+                        // fallback para altura da fonte se lineHeight for 'normal'
+                        lineHeight = parseFloat(style.fontSize) * 1.2;
+                    }
+                    if (errorMessageElement.offsetHeight > lineHeight * 1.2) {
+                        parentContainer.classList.add('two-lines');
+                    } else {
+                        parentContainer.classList.remove('two-lines');
+                    }
+                }, 10);
             }
             return false;
         } else {
@@ -132,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessageElement.style.display = 'none';
             if (parentContainer) {
                 parentContainer.classList.remove('has-error'); // Remove a classe has-error do pai
+                parentContainer.classList.remove('two-lines');
             }
             return true;
         }
@@ -192,13 +199,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Função para limpar validações ao trocar de formulário
-    function clearAllFormValidations() {
-        // Seleciona todos os inputs em AMBOS os formulários
-        const allInputs = document.querySelectorAll('.login-container input, .register-container input');
+    window.clearAllFormValidations = function() {
+        // Remove classe de erro dos inputs
+        document.querySelectorAll('.input-field.error').forEach(input => {
+            input.classList.remove('error');
+        });
 
-        allInputs.forEach(input => {
-            input.classList.remove('error'); // Remove a classe 'error' do input
-            input.value = ''; // **Limpa o valor do campo de input**
+        // Remove classes de erro dos containers
+        document.querySelectorAll('.input-box.input-field-container.has-error, .input-box.input-field-container.two-lines').forEach(container => {
+            container.classList.remove('has-error', 'two-lines');
         });
 
         // Esconde todas as mensagens de erro
@@ -206,12 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
             message.style.display = 'none';
         });
 
-        // Remove a classe 'has-error' de todos os containers
-        document.querySelectorAll('.input-box.input-field-container.has-error').forEach(container => {
-            container.classList.remove('has-error');
-        });
-
-        // Garante que a mensagem de mismatch de senha também seja escondida
+        // Esconde a mensagem de senhas não coincidem
+        var passwordMismatchMessage = document.getElementById('passwordMismatchMessage');
         if (passwordMismatchMessage) {
             passwordMismatchMessage.style.display = 'none';
         }

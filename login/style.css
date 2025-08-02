@@ -129,7 +129,6 @@ header {
   border: none;
   border-radius: 30px;
   outline: none;
-  transition: .2s ease;
 }
 
 .input-field:hover,
@@ -143,7 +142,20 @@ header {
 
 .input-box.input-field-container {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+}
+
+.input-box.input-field-container.has-error {
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 600px) {
+  .input-box.input-field-container.has-error {
+    margin-bottom: 30px;
+  }
+  .input-box.input-field-container.has-error.two-lines {
+    margin-bottom: 50px;
+  }
 }
 
 .input-box i {
@@ -206,7 +218,7 @@ header {
   font-size: 0.80em;
   display: none;
   position: absolute;
-  left: 20px;
+  left: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
