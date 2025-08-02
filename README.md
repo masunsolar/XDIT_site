@@ -93,7 +93,7 @@ Quer contribuir com o desenvolvimento do X-DIT? Siga estes passos:
 
 Sinta-se à vontade para abrir **issues** com sugestões ou bugs encontrados.
 
-## Problemas:
+## Problemas e afazeres:
 
 ### Tela de [login](https://github.com/masunsolar/XDIT_site/tree/main/login)
 - Mensagem de erro não somem quando vc troca de tela em cadastrar para login
