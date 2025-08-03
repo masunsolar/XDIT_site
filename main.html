@@ -7,12 +7,12 @@
     <title>X-Dit: Proposta Interativa de Projeto</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+    <script src="./assets/js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./images/ICON_XDIT.jpeg">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/ICON_XDIT.jpeg">
 </head>
 
 <body class="antialiased">
@@ -20,19 +20,20 @@
     <header class="main-header">
         <nav class="container main-nav">
             <div class="nav-logo">
-                <img src="./images/logoXDIT.png" alt="Logo">
+                <img src="./assets/images/logoXDIT.png" alt="Logo">
                 <h1 class="logo">X-DIT</h1>
             </div>
 
             <div class="nav-links">
                 <div class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">
+                    <a href="./dropdown-items/servicosMain.html" class="nav-link dropdown-toggle">
                         Serviços <i class='bx bx-chevron-down'></i> </a>
                     <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item">Consultoria Fiscal</a>
-                        <a href="#" class="dropdown-item">Emissão de NF-e</a>
-                        <a href="#" class="dropdown-item">Validação de CT-e</a>
-                        <a href="#" class="dropdown-item">Relatórios Personalizados</a>
+                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Consultoria Fiscal</a>
+                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Emissão de NF-e</a>
+                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Validação de CT-e</a>
+                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Relatórios
+                            Personalizados</a>
                     </div>
                 </div>
                 <a href="#" class="nav-link">Sobre</a>
@@ -50,7 +51,7 @@
                 <button class="primary-btn">QUERO UMA DEMONSTRAÇÃO GRATUITA</button>
             </div>
             <div class="main-logo">
-                <img src="./images/logoXDIT.png" alt="X-DIT Logo" />
+                <img src="./assets/images/logoXDIT.png" alt="X-DIT Logo" />
                 <p id="subtext">Sistema de Nota Fiscal Eletrônica</p>
             </div>
         </section>
@@ -219,22 +220,85 @@
             </div>
         </section>
 
+        <section id="pricing-plans" class="pricing-section">
+            <div class="container">
+                <h2 class="section-title">Planos transparentes e sem surpresas.</h2>
+                <p class="section-subtitle">Escolha a opção que melhor se adapta ao seu crescimento.</p>
+                <div class="grid-3 pricing-grid">
+                    <div class="pricing-card">
+                        <h3>Plano Essencial</h3>
+                        <p class="price">R$ 249<span>/mês</span></p>
+                        <ul>
+                            <li>Até 5 CNPJs</li>
+                            <li>Até 500 Docs/mês</li>
+                            <li>Dashboard Inteligente</li>
+                            <li>Gestão de NF-e e CT-e</li>
+                            <li>Alertas Padrão</li>
+                            <li>Suporte via Chat/Email</li>
+                        </ul>
+                        <a href="#" class="button primary small">INICIAR TESTE GRÁTIS</a>
+                    </div>
+                    <div class="pricing-card popular">
+                        <span class="popular-badge">Mais Popular</span>
+                        <h3>Plano Profissional</h3>
+                        <p class="price">R$ 499<span>/mês</span></p>
+                        <ul>
+                            <li>Até 20 CNPJs</li>
+                            <li>Até 2.000 Docs/mês</li>
+                            <li>Tudo do Essencial, e mais:</li>
+                            <li>Gestão de NFS-e</li>
+                            <li>Alertas Personalizáveis</li>
+                            <li>Suporte Prioritário</li>
+                        </ul>
+                        <a href="#" class="button primary large">ESCOLHER PLANO PRO</a>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>Plano Enterprise</h3>
+                        <p class="price">Sob Consulta</p>
+                        <ul>
+                            <li>CNPJs Ilimitados</li>
+                            <li>Volume Personalizado</li>
+                            <li>Tudo do Profissional, e mais:</li>
+                            <li>Dashboards de BI Avançados</li>
+                            <li>Acompanhamento Fiscal Consultivo</li>
+                            <li>Gerente de Conta Dedicado</li>
+                        </ul>
+                        <a href="#" class="button secondary small">SOLICITAR CONTATO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer class="main-footer">
-        <div class="waves">
-            <div class="wave" id="wave1"></div>
-            <div class="wave" id="wave2"></div>
-            <div class="wave" id="wave3"></div>
-            <div class="wave" id="wave4"></div>
-        </div>
-        <div class="container">
-            <h2 class="footer-title">X-Dit</h2>
-            <a href="[https://www.instagram.com/xdit_fiscal/](https://www.instagram.com/xdit_fiscal/)"></a>
-            <a href="#">Contato</a>
-            <a href="#">Equipe</a>
-            <p class="footer-subtitle">Inteligência Fiscal. Simples e Acessível.</p>
-            <p class="footer-copy">&copy; 2025 X-Dit. Todos os direitos reservados.</p>
+    <footer class="main-footer bg-dark">
+        <div class="container footer-inner">
+            <div class="footer-section">
+                <h4>DIT-X</h4>
+                <p>© 2025 DIT-X Soluções Fiscais. Todos os direitos reservados.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre Nós</a></li>
+                    <li><a href="#">Carreiras</a></li>
+                    <li><a href="#">Base de Conhecimento (Tutoriais)</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Termos de Serviço</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="#"><img src="img/icone-linkedin.svg" alt="LinkedIn"></a>
+                    <a href="#"><img src="img/icone-instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
