@@ -15,11 +15,19 @@
 @import url('./components/timeline.css');
 @import url('./components/charts.css');
 @import url('./components/dropdown.css');
+@import url('./components/dropdown-mobile.css');
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Garante que não haverá rolagem horizontal indesejada */
+    overflow-x: hidden;
+}
+
+@media (min-width: 1025px) {
+    .dropdown-mobile {
+        display: none !important;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -33,7 +41,8 @@ html, body {
         right: 0;
         left: 0;
         width: 100vw;
-        height: 100vh; /* Ensures it covers the full viewport height */
+        height: 100vh;
+        
         background: #fff;
         flex-direction: column;
         justify-content: flex-start;
@@ -42,27 +51,27 @@ html, body {
         gap: 1.5rem;
         z-index: 1000;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-        transform: translateY(-100%); /* Starts off-screen above */
-        opacity: 0; /* Starts hidden */
-        pointer-events: none; /* Prevents interaction when closed */
-        /* --- IMPORTANT CHANGE HERE --- */
+        transform: translateY(-100%);
+
+        opacity: 0;
+
+        pointer-events: none;
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
 
     .header-nav-links.open {
-        transform: translateY(0); /* Slides into view */
-        opacity: 1; /* Becomes visible */
-        pointer-events: auto; /* Allows interaction when open */
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
-    /* Apply the same logic for your submenu */
     .header-nav-links.submenu {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
         width: 100vw;
-        height: 100%; 
+        height: 100%;
         background: #fff;
         flex-direction: column;
         justify-content: flex-start;
@@ -72,16 +81,16 @@ html, body {
         z-index: 1002;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
         display: flex;
-        transform: translateY(-100%); 
-        opacity: 0; 
-        pointer-events: none; 
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
 
     .header-nav-links.submenu.open {
         transform: translateY(0);
-        opacity: 1; 
-        pointer-events: auto; 
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .main-nav {
