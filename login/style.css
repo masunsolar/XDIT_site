@@ -9,7 +9,7 @@
 }
 
 body {
-  background: url(../../images/pexels-francesco-ungaro-281260.jpg);
+  background: url(../assets/images/pexels-francesco-ungaro-281260.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -39,7 +39,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .nav-logo img {

@@ -7,6 +7,7 @@
 @import url('./layout/header.css');
 @import url('./layout/main-sections.css');
 @import url('./layout/footer.css');
+@import url('./layout/pricing.css');
 
 @import url('./components/buttons.css');
 @import url('./components/cards.css');
