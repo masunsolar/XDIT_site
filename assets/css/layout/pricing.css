@@ -1,7 +1,7 @@
 .pricing-section {
-    padding: 60px 0;
     font-family: Arial, sans-serif;
     background-color: #ffffff;
+    padding: 60px 20rem;
 }
 
 .pricing-section .container {
@@ -43,17 +43,17 @@
     position: relative;
 }
 
-.pricing-card:hover {
-    border-color: #007bff; 
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
-}
-
 .pricing-card.popular {
     border-width: 2px;
     border-color: #eeff00;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.pricing-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
 
 .popular-badge {
@@ -104,8 +104,8 @@
 }
 
 .pricing-card ul li::before {
-    content: "✔"; 
-    color: #28a745; 
+    content: "✔";
+    color: #28a745;
     margin-right: 10px;
 }
 
@@ -117,7 +117,7 @@
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .button.primary {
@@ -142,10 +142,22 @@
 }
 
 @media (max-width: 992px) {
+    .pricing-section {
+        padding: 0;
+    }
+
     .pricing-grid {
         grid-template-columns: 1fr;
     }
+
     .pricing-card.popular {
         margin-top: 20px;
+    }
+
+    .pricing-card:hover {
+        border-color: #007bff;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        transform: scale(1.03);
+        transition: transform 0.2s ease-in-out;
     }
 }

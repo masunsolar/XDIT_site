@@ -27,16 +27,13 @@
     .container {
         max-width: 768px;
     }
-    .nav-links {
+    .header-nav-links {
         display: flex;
         gap: 2rem;
     }
-    .main-content {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-    .page-section {
-        margin-bottom: 6rem;
+    .main-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 4vw;
     }
     .main-title {
         font-size: 3rem;
