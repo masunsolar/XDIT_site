@@ -10,3 +10,17 @@
     position: relative;
     font-weight: 700;
 }
+
+/* Botão de voltar no submenu */
+.back-btn {
+    background: none;
+    border: none;
+    color: #2563eb;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}

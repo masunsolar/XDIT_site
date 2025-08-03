@@ -1,7 +1,7 @@
 @import url('./vendors/fonts.css');
-@import url('./base/reset.css'); 
+@import url('./base/reset.css');
 @import url('./base/typography.css');
-@import url('./base/utilities.css'); 
+@import url('./base/utilities.css');
 
 @import url('./layout/container.css');
 @import url('./layout/header.css');
@@ -16,6 +16,73 @@
 @import url('./components/charts.css');
 @import url('./components/dropdown.css');
 
+@media (max-width: 1024px) {
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .header-nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* Ensures it covers the full viewport height */
+        background: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 90px 2rem 2rem 2rem;
+        gap: 1.5rem;
+        z-index: 1000;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        transform: translateY(-100%); /* Starts off-screen above */
+        opacity: 0; /* Starts hidden */
+        pointer-events: none; /* Prevents interaction when closed */
+        /* --- IMPORTANT CHANGE HERE --- */
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .header-nav-links.open {
+        transform: translateY(0); /* Slides into view */
+        opacity: 1; /* Becomes visible */
+        pointer-events: auto; /* Allows interaction when open */
+    }
+
+    /* Apply the same logic for your submenu */
+    .header-nav-links.submenu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; 
+        background: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 90px 2rem 2rem 2rem;
+        gap: 1.5rem;
+        z-index: 1002;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        display: flex;
+        transform: translateY(-100%); 
+        opacity: 0; 
+        pointer-events: none; 
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .header-nav-links.submenu.open {
+        transform: translateY(0);
+        opacity: 1; 
+        pointer-events: auto; 
+    }
+
+    .main-nav {
+        flex-wrap: nowrap;
+    }
+}
+
 /* Media Queries Globais ou Ajustes Finais */
 @media (min-width: 640px) {
     .container {
@@ -27,40 +94,80 @@
     .container {
         max-width: 768px;
     }
+
     .header-nav-links {
         display: flex;
         gap: 2rem;
     }
+
     .main-section {
         grid-template-columns: 1fr 1fr;
         padding: 0 4vw;
     }
+
     .main-title {
         font-size: 3rem;
         line-height: 1;
     }
+
     .main-subtitle {
         font-size: 1.25rem;
         line-height: 1.75rem;
     }
+
     .challenge-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
     .tabs-container {
         gap: 1rem;
     }
+
     .tab-button {
         font-size: 1rem;
         line-height: 1.5rem;
     }
+
     .timeline-wrapper {
         flex-direction: row;
     }
+
     .timeline-nav {
         width: 33.333333%;
     }
+
     .timeline-content-wrapper {
         width: 66.666667%;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-section {
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .chart-card {
+        padding: 0.3rem;
+    }
+
+    .pricing-section {
+        padding: 3rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.popular {
+        margin-top: 20px;
+    }
+
+    .pricing-card:hover {
+        border-color: #007bff;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        transform: scale(1.03);
+        transition: transform 0.2s ease-in-out;
     }
 }
 
@@ -68,6 +175,117 @@
     .container {
         max-width: 1024px;
     }
+
+    .growth-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+/* Media Queries Globais ou Ajustes Finais */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .header-nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .main-section {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 4vw;
+    }
+
+    .main-title {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .main-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    .challenge-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tabs-container {
+        gap: 1rem;
+    }
+
+    .tab-button {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .timeline-wrapper {
+        flex-direction: row;
+    }
+
+    .timeline-nav {
+        width: 33.333333%;
+    }
+
+    .timeline-content-wrapper {
+        width: 66.666667%;
+    }
+}
+
+@media (max-width: 992px) {
+    .page-section {
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    .chart-card {
+        padding: 0.3rem;
+    }
+
+    .pricing-section {
+        padding: 3rem;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card.popular {
+        margin-top: 20px;
+    }
+
+    .pricing-card:hover {
+        border-color: #007bff;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        transform: scale(1.03);
+        transition: transform 0.2s ease-in-out;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+
     .growth-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }

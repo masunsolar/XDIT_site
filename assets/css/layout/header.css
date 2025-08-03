@@ -47,3 +47,39 @@
 .nav-link:hover {
     color: #2563eb;
 }
+
+/* =================== MENU HAMBURGUER RESPONSIVO =================== */
+
+/* Botão hambúrguer - só aparece no mobile */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-bar {
+    width: 28px;
+    height: 3px;
+    background: #2563eb;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Menus mobile */
+.header-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.header-nav-links.submenu {
+    display: none;
+}

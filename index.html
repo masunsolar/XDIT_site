@@ -24,27 +24,83 @@
                 <h1 class="logo">X-DIT</h1>
             </div>
 
-            <div class="header-nav-links">
-                <div class="dropdown">
-                    <a href="./dropdown-items/servicosMain.html" class="nav-link dropdown-toggle">
-                        Serviços <i class='bx bx-chevron-down'></i> </a>
-                    <div class="dropdown-menu">
-                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Consultoria Fiscal</a>
-                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Emissão de NF-e</a>
-                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Validação de CT-e</a>
-                        <a href="./dropdown-items/servicosMain.html/#" class="dropdown-item">Relatórios
-                            Personalizados</a>
-                    </div>
-                </div>
-                <a href="#" class="nav-link">Sobre</a>
-                <a href="#grow" class="nav-link">Crescimento</a>
-                <a href="#" class="nav-link">Contato</a>
-                <a href="/login/login.html" class="nav-link">Login</a>
+            <!-- Botão hambúrguer (visível apenas no mobile) -->
+            <button id="hamburger-btn" aria-label="Abrir menu" class="hamburger-btn" type="button">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <!-- Menu principal (desktop e mobile) -->
+            <div class="header-nav-links" id="main-menu">
+                <a href="#" class="nav-link" data-menu="close">Sobre</a>
+                <a href="#grow" class="nav-link" data-menu="close">Crescimento</a>
+                <a href="#" class="nav-link" data-menu="close">Contato</a>
+                <a href="/login/login.html" class="nav-link" data-menu="close">Login</a>
+                <a href="#" class="nav-link" id="open-servicos">Serviços <i class='bx bx-chevron-right'></i></a>
+            </div>
+
+            <!-- Submenu Serviços (mobile) -->
+            <div class="header-nav-links submenu" id="submenu-servicos">
+                <button class="back-btn" id="back-main-menu"><i class='bx bx-chevron-left'></i> Voltar</button>
+                <a href="./dropdown-items/servicosMain.html/#" class="nav-link" data-menu="close">Consultoria Fiscal</a>
+                <a href="./dropdown-items/servicosMain.html/#" class="nav-link" data-menu="close">Emissão de NF-e</a>
+                <a href="./dropdown-items/servicosMain.html/#" class="nav-link" data-menu="close">Validação de CT-e</a>
+                <a href="./dropdown-items/servicosMain.html/#" class="nav-link" data-menu="close">Relatórios Personalizados</a>
             </div>
         </nav>
     </header>
 
     <main class="main-content" id="main-content">
+
+    <script>
+    // Menu hambúrguer responsivo
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mainMenu = document.getElementById('main-menu');
+    const submenuServicos = document.getElementById('submenu-servicos');
+    const openServicos = document.getElementById('open-servicos');
+    const backMainMenu = document.getElementById('back-main-menu');
+
+    function closeAllMenus() {
+        mainMenu.classList.remove('open');
+        submenuServicos.classList.remove('open');
+        document.body.classList.remove('menu-open');
+    }
+
+    hamburgerBtn && hamburgerBtn.addEventListener('click', () => {
+        if (mainMenu.classList.contains('open')) {
+            closeAllMenus();
+        } else {
+            mainMenu.classList.add('open');
+            submenuServicos.classList.remove('open');
+            document.body.classList.add('menu-open');
+        }
+    });
+
+    openServicos && openServicos.addEventListener('click', (e) => {
+        e.preventDefault();
+        mainMenu.classList.remove('open');
+        submenuServicos.classList.add('open');
+    });
+
+    backMainMenu && backMainMenu.addEventListener('click', (e) => {
+        e.preventDefault();
+        submenuServicos.classList.remove('open');
+        mainMenu.classList.add('open');
+    });
+
+    // Fecha menu ao clicar em qualquer link
+    document.querySelectorAll('[data-menu="close"]').forEach(link => {
+        link.addEventListener('click', closeAllMenus);
+    });
+
+    // Fecha menu ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            closeAllMenus();
+        }
+    });
+    </script>
         <section class="main-section">
                 <div class="main-text">
                     <h1>SAIBA SE A SUA EMPRESA ESTÁ EM DIA AGORA</h1>
