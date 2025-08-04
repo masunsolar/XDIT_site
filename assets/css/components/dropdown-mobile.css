@@ -3,7 +3,7 @@
     max-height: 0;
     opacity: 0;
     transform: translateY(-10px);
-    transition: max-height 0.3s ease-in-out, transform 0.3s ease-out;
+    transition: max-height 0.3s ease-in-out, transform 0.3s ease-in-out;
 
     flex-direction: column;
     width: 100%;

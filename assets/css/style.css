@@ -495,3 +495,16 @@
     gap: 10px;
   }
 }
+
+@media (max-width: 900px) {
+  .main-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: 100px;
+    padding: 1rem 1rem;
+  }
+
+  .main-logo img {
+    max-width: 60vw;
+  }
+}
