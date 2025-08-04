@@ -15,6 +15,8 @@
 @import url('./components/tabs.css');
 @import url('./components/timeline.css');
 @import url('./components/charts.css');
+@import url('./components/dropdown.css');
+@import url('./components/dropdown-mobile.css');
 
 /* ========== DESKTOP DROPDOWN (hover) ========= */
 @media (min-width: 1025px) {
@@ -49,7 +51,7 @@
     }
 
     .nav-link-dropdown:hover .dropdown-mobile {
-        max-height: 500px; 
+        max-height: 500px;
         opacity: 1;
         transform: translateY(0);
         padding: 10px 0;
@@ -72,6 +74,7 @@
 
 /* ========== MOBILE DROPDOWN (clique) & MENU MOBILE GERAL ========= */
 @media (max-width: 1024px) {
+
     .dropdown-mobile,
     .header-nav-links,
     .header-nav-links.submenu {
@@ -93,15 +96,15 @@
         height: 0;
         padding: 0;
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, height 0.3s ease-in-out;
-        display: flex; 
+        display: flex;
         flex-direction: column;
-        align-items: flex-start; 
+        align-items: flex-start;
         width: 100%;
         overflow: hidden;
         position: static;
         box-shadow: none;
         background: transparent;
-        gap: 0.5rem; 
+        gap: 0.5rem;
         padding-left: 2.2rem;
     }
 
@@ -118,8 +121,8 @@
         color: #2563eb;
         text-decoration: none;
         font-size: 1rem;
-        line-height: 1.4; 
-        white-space: normal; 
+        line-height: 1.4;
+        white-space: normal;
     }
 
     .dropdown-mobile a:hover {
@@ -155,10 +158,10 @@
     }
 
     .header-nav-links.submenu {
-        height: 100%; /* Era 100vh, mas 100% é mais adequado para o contexto */
+        height: 100%;
         z-index: 1002;
-        display: flex; /* Adicionado para manter o comportamento flex */
-        transform: translateY(-100%); /* Mantido para a transição */
+        display: flex;
+        transform: translateY(-100%);
     }
 
     .header-nav-links.submenu.open {
@@ -277,5 +280,136 @@
 @media (min-width: 1536px) {
     .container {
         max-width: 1536px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .header-inner {
+        position: relative;
+    }
+
+    .header-inner button.menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #0A2540;
+        cursor: pointer;
+    }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-section .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-section .pricing-card {
+        margin-bottom: 30px;
+    }
+
+    .pricing-section .pricing-card.popular {
+        margin-top: 15px;
+    }
+
+    .main-footer .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-footer .footer-section {
+        width: 80%;
+        margin-bottom: 3em;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .main-footer .footer-top-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-footer .footer-brand-info {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    .main-footer .footer-links-group {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    .main-footer .footer-section {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .main-footer .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-footer .footer-legal-links {
+        justify-content: center;
+        order: 1;
+        width: 100%;
+    }
+
+    .main-footer .footer-social-media {
+        justify-content: center;
+        order: 2;
+        width: 100%;
+    }
+
+    .main-footer .footer-copyright {
+        order: 3;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-footer .footer-section {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .main-footer .footer-legal-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }

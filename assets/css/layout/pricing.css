@@ -141,23 +141,18 @@
     background-color: #e9f5ff;
 }
 
-@media (max-width: 992px) {
-    .pricing-section {
-        padding: 0;
-    }
 
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
+.pricing-section {
+    padding: 3rem; /* Padding padrão para mobile (do original max-width: 992px) */
+}
 
-    .pricing-card.popular {
-        margin-top: 20px;
-    }
+.pricing-card.popular {
+    margin-top: 20px; /* Margem para destaque em mobile */
+}
 
-    .pricing-card:hover {
-        border-color: #007bff;
-        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
-        transform: scale(1.03);
-        transition: transform 0.2s ease-in-out;
-    }
+.pricing-card:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+    transform: scale(1.03);
+    transition: transform 0.2s ease-in-out;
 }

@@ -16,89 +16,93 @@
 </head>
 
 <body class="antialiased">
-<header class="main-header">
-    <nav class="container main-nav">
-        <div class="nav-logo">
-            <img src="./assets/images/logoXDIT.png" alt="Logo">
-            <h1 class="logo">X-DIT</h1>
-        </div>
-
-        <button id="hamburger-btn" aria-label="Abrir menu" class="hamburger-btn" type="button">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-        </button>
-
-        <div class="header-nav-links" id="main-menu">
-            <a href="#" class="nav-link" data-menu="close">Sobre</a>
-            <a href="#grow" class="nav-link" data-menu="close">Crescimento</a>
-            <div class="nav-link nav-link-dropdown" id="open-servicos" tabindex="0">
-                Serviços <i class='bx bx-chevron-down'></i>
-                <div class="dropdown-mobile" id="dropdown-servicos">
-                    <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile" data-menu="close">Consultoria Fiscal</a>
-                    <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile" data-menu="close">Emissão de NF-e</a>
-                    <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile" data-menu="close">Validação de CT-e</a>
-                    <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile" data-menu="close">Relatórios Personalizados</a>
-                </div>
+    <header class="main-header">
+        <nav class="container main-nav">
+            <div class="nav-logo">
+                <img src="./assets/images/logoXDIT.png" alt="Logo">
+                <h1 class="logo">X-DIT</h1>
             </div>
-            <a href="#" class="nav-link" data-menu="close">Contato</a>
-            <a href="./pages/login/login.html" class="nav-link" data-menu="close">Login</a>
-        </div>
-    </nav>
-</header>
+
+            <button id="hamburger-btn" aria-label="Abrir menu" class="hamburger-btn" type="button">
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <div class="header-nav-links" id="main-menu">
+                <a href="#" class="nav-link" data-menu="close">Sobre</a>
+                <a href="#grow" class="nav-link" data-menu="close">Crescimento</a>
+                <div class="nav-link nav-link-dropdown" id="open-servicos" tabindex="0">
+                    Serviços <i class='bx bx-chevron-down'></i>
+                    <div class="dropdown-mobile" id="dropdown-servicos">
+                        <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile"
+                            data-menu="close">Consultoria Fiscal</a>
+                        <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile"
+                            data-menu="close">Emissão de NF-e</a>
+                        <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile"
+                            data-menu="close">Validação de CT-e</a>
+                        <a href="pages/dropdown-items/servicosMain.html/#" class="dropdown-item-mobile"
+                            data-menu="close">Relatórios Personalizados</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link" data-menu="close">Contato</a>
+                <a href="./pages/login/login.html" class="nav-link" data-menu="close">Login</a>
+            </div>
+        </nav>
+    </header>
 
     <main class="main-content" id="main-content">
 
-    <script>
-    // Menu hambúrguer responsivo
-    const hamburgerBtn = document.getElementById('hamburger-btn');
-    const mainMenu = document.getElementById('main-menu');
-    const openServicos = document.getElementById('open-servicos');
-    const dropdownServicos = document.getElementById('dropdown-servicos');
+        <script>
+            // Menu hambúrguer responsivo
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mainMenu = document.getElementById('main-menu');
+            const openServicos = document.getElementById('open-servicos');
+            const dropdownServicos = document.getElementById('dropdown-servicos');
 
-    function closeAllMenus() {
-        mainMenu.classList.remove('open');
-        dropdownServicos.classList.remove('open');
-        document.body.classList.remove('menu-open');
-    }
+            function closeAllMenus() {
+                mainMenu.classList.remove('open');
+                dropdownServicos.classList.remove('open');
+                document.body.classList.remove('menu-open');
+            }
 
-    hamburgerBtn && hamburgerBtn.addEventListener('click', () => {
-        if (mainMenu.classList.contains('open')) {
-            closeAllMenus();
-        } else {
-            mainMenu.classList.add('open');
-            document.body.classList.add('menu-open');
-        }
-    });
+            hamburgerBtn && hamburgerBtn.addEventListener('click', () => {
+                if (mainMenu.classList.contains('open')) {
+                    closeAllMenus();
+                } else {
+                    mainMenu.classList.add('open');
+                    document.body.classList.add('menu-open');
+                }
+            });
 
-    openServicos && openServicos.addEventListener('click', (e) => {
-        // Só ativa no mobile
-        if (window.innerWidth > 1024) return;
-        e.preventDefault();
-        dropdownServicos.classList.toggle('open');
-    });
+            openServicos && openServicos.addEventListener('click', (e) => {
+                // Só ativa no mobile
+                if (window.innerWidth > 1024) return;
+                e.preventDefault();
+                dropdownServicos.classList.toggle('open');
+            });
 
-    // Fecha menu ao clicar em qualquer link
-    document.querySelectorAll('[data-menu="close"]').forEach(link => {
-        link.addEventListener('click', closeAllMenus);
-    });
+            // Fecha menu ao clicar em qualquer link
+            document.querySelectorAll('[data-menu="close"]').forEach(link => {
+                link.addEventListener('click', closeAllMenus);
+            });
 
-    // Fecha menu ao redimensionar para desktop
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 1024) {
-            closeAllMenus();
-        }
-    });
-    </script>
+            // Fecha menu ao redimensionar para desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024) {
+                    closeAllMenus();
+                }
+            });
+        </script>
         <section class="main-section">
-                <div class="main-text">
-                    <h1>SAIBA SE A SUA EMPRESA ESTÁ EM DIA AGORA</h1>
-                    <button id="main-primary-btn">QUERO UMA DEMONSTRAÇÃO GRATUITA</button>
-                </div>
-                <div class="main-logo">
-                    <img src="./assets/images/logoXDIT.png" alt="X-DIT Logo" />
-                    <p id="subtext">Sistema de Nota Fiscal Eletrônica</p>
-                </div>
+            <div class="main-text">
+                <h1>SAIBA SE A SUA EMPRESA ESTÁ EM DIA AGORA</h1>
+                <button id="main-primary-btn">QUERO UMA DEMONSTRAÇÃO GRATUITA</button>
+            </div>
+            <div class="main-logo">
+                <img src="./assets/images/logoXDIT.png" alt="X-DIT Logo" />
+                <p id="subtext">Sistema de Nota Fiscal Eletrônica</p>
+            </div>
         </section>
 
         <section class="page-section intro-section">
@@ -315,33 +319,68 @@
         </section>
     </main>
 
-    <footer class="main-footer bg-dark">
-        <div class="container footer-inner">
-            <div class="footer-section">
-                <h4>DIT-X</h4>
-                <p>© 2025 DIT-X Soluções Fiscais. Todos os direitos reservados.</p>
+    <footer class="main-footer">
+        <div class="container footer-top-section">
+            <div class="footer-brand-info">
+                <img src="./assets/images/logoXDITB.png" alt="DIT-X Logo" class="footer-logo">
+                <p class="footer-slogan">A tecnologia que simplifica seus impostos.</p>
             </div>
-            <div class="footer-section">
-                <h4>Navegação</h4>
-                <ul>
-                    <li><a href="#main-content">Início</a></li>
-                    <li><a href="#">Sobre Nós</a></li>
-                    <li><a href="#">Carreiras</a></li>
-                    <li><a href="#">Base de Conhecimento (Tutoriais)</a></li>
-                </ul>
+
+            <div class="footer-links-group">
+                <div class="footer-section">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#main-content">Início</a></li>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Carreiras</a></li>
+                        <li><a href="#">Base de Conhecimento (Tutoriais)</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Soluções</h4>
+                    <ul>
+                        <li><a href="#">Pessoa Física</a></li>
+                        <li><a href="#">Pessoa Jurídica</a></li>
+                        <li><a href="#">Microempreendedor Individual</a></li>
+                        <li><a href="#">Simulador Tributário</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Eventos</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Parceiros</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Imprensa</a></li>
+                        <li><a href="#">Nossa História</a></li>
+                        <li><a href="#">Oportunidades</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Termos de Serviço</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Redes Sociais</h4>
-                <div class="social-links">
-                    <a href="#"><img src="img/icone-linkedin.svg" alt="LinkedIn"></a>
-                    <a href="#"><img src="img/icone-instagram.svg" alt="Instagram"></a>
+        </div>
+
+        <div class="footer-bottom-section">
+            <div class="container footer-bottom-content">
+                <div class="footer-legal-links">
+                    <a href="#">Termos de Serviço</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Segurança</a>
+                </div>
+                <p class="footer-copyright">&copy; 2025 DIT-X Soluções Fiscais. Todos os direitos reservados.</p>
+                <div class="footer-social-media">
+                    <a href="#"><img src="img/icone-linkedin.svg" alt="LinkedIn" aria-label="LinkedIn"></a>
+                    <a href="#"><img src="img/icone-instagram.svg" alt="Instagram" aria-label="Instagram"></a>
+                    <a href="#"><img src="img/icone-facebook.svg" alt="Facebook" aria-label="Facebook"></a>
                 </div>
             </div>
         </div>
