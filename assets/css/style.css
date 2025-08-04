@@ -1,22 +1,23 @@
 /* ========== IMPORTS ========= */
-@import url('./vendors/fonts.css');
-@import url('./base/reset.css');
-@import url('./base/typography.css');
-@import url('./base/utilities.css');
+@import url("./vendors/fonts.css");
+@import url("./base/reset.css");
+@import url("./base/typography.css");
+@import url("./base/utilities.css");
 
-@import url('./layout/container.css');
-@import url('./layout/header.css');
-@import url('./layout/main-sections.css');
-@import url('./layout/footer.css');
-@import url('./layout/pricing.css');
+@import url("./layout/container.css");
+@import url("./layout/header.css");
+@import url("./layout/main-sections.css");
+@import url("./layout/footer.css");
+@import url("./layout/pricing.css");
 
-@import url('./components/buttons.css');
-@import url('./components/cards.css');
-@import url('./components/tabs.css');
-@import url('./components/timeline.css');
-@import url('./components/charts.css');
-@import url('./components/dropdown.css');
-@import url('./components/dropdown-mobile.css');
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/tabs.css");
+@import url("./components/timeline.css");
+@import url("./components/charts.css");
+@import url("./components/arrow.css");
+@import url("./components/dropdown.css");
+@import url("./components/dropdown-mobile.css");
 
 /* ========== DESKTOP DROPDOWN (hover) ========= */
 @media (min-width: 1025px) {
@@ -46,7 +47,8 @@
         overflow: hidden;
         opacity: 0;
         transform: translateY(-10px);
-        transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out, padding 0.3s ease-out;
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+            transform 0.3s ease-out, padding 0.3s ease-out;
         padding: 0;
     }
 
@@ -67,6 +69,7 @@
     }
 
     .dropdown-item-mobile:hover {
+        background: #f1f1f1;
         color: #2563eb;
     }
 }
@@ -179,6 +182,106 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .main-title {
+        padding: 1rem;
+    }
+
+    .main-subtitle {
+        padding: 1rem;
+    }
+
+    .main-text h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .growth-step-card {
+        margin: 0 1rem;
+    }
+
+    .chart-card {
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
+    .chart-caption {
+        padding: 1rem;
+    }
+
+    .section-title {
+        padding: 1rem;
+    }
+
+    .section-subtitle {
+        padding: 1rem;
+    }
+
+    .tab-content-wrapper {
+        margin: 0 1rem;
+    }
+
+    .challenge-card {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-content{
+        padding: 0;
+    }
+    .main-section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .main-title {
+        padding: 1rem;
+    }
+
+    .main-text h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .growth-step-card {
+        margin: 0 1rem;
+    }
+
+    .chart-card {
+        border-radius: 0px;
+        box-shadow: none;
+    }
+
+    .chart-caption {
+        padding: 1rem;
+    }
+
+    .section-title {
+        padding: 1rem;
+    }
+
+    .section-subtitle {
+        padding: 1rem;
+    }
+
+    .tab-content-wrapper {
+        margin: 0 1rem;
+    }
+
+    .challenge-card {
+        margin: 0 1rem;
+    }
+}
+
 @media (min-width: 768px) {
     .container {
         max-width: 768px;
@@ -191,7 +294,7 @@
 
     .main-section {
         grid-template-columns: 1fr 1fr;
-        padding: 0 4vw;
+        padding: 20vh 4vw;
     }
 
     .main-title {
@@ -321,7 +424,7 @@
         background: none;
         border: none;
         font-size: 1.5em;
-        color: #0A2540;
+        color: #0a2540;
         cursor: pointer;
     }
 
@@ -399,7 +502,8 @@
         order: 3;
         margin-top: 10px;
     }
-    .pricing-section .container{
+
+    .pricing-section .container {
         padding: 0;
     }
 }
@@ -413,18 +517,5 @@
     .main-footer .footer-legal-links {
         flex-direction: column;
         gap: 10px;
-    }
-}
-
-@media (max-width: 900px) {
-    .main-section {
-        grid-template-columns: 1fr;
-        text-align: center;
-        margin-top: 100px;
-        padding: 1rem 1rem;
-    }
-
-    .main-logo img {
-        max-width: 60vw;
     }
 }
