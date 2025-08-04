@@ -400,6 +400,9 @@
         order: 3;
         margin-top: 10px;
     }
+    .pricing-section .container{
+        padding: 0;
+    }
 }
 
 @media (max-width: 600px) {
@@ -413,3 +416,4 @@
         gap: 10px;
     }
 }
+

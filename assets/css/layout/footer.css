@@ -1,4 +1,3 @@
-/* Variáveis para cores - Torna mais fácil manter a paleta consistente */
 :root {
     --dark-background: #000000;
     --text-color-light: #F0F2F5;
@@ -11,14 +10,19 @@
 .main-footer {
     background-color: var(--dark-background);
     color: var(--text-color-dark);
-    padding: 40px 0 20px 0;
+    padding: 40px 30px 20px 30px; 
     font-family: 'Arial', sans-serif;
+    width: 100vw; 
+    margin-left: calc(50% - 50vw); 
+    box-sizing: border-box; 
 }
 
 .main-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 2vw;
+    box-sizing: border-box;
 }
 
 /* Seção Superior do Footer (Logo/Slogan + Links) */
