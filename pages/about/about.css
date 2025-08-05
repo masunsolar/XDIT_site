@@ -35,15 +35,23 @@ body {
 
 .logo {
     font-size: 1.5rem;
-    line-height: 2rem;
     font-weight: 700;
     color: #2563eb;
+    margin: 10px ;
 }
 
 .nav-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#nav-logo-link {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nav-logo img {
@@ -112,7 +120,6 @@ body {
 .team-section h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 30px;
 }
 
 /* Estilo para os cards dos membros */
@@ -840,5 +847,224 @@ body {
     .social-links {
         justify-content: center;
         /* centraliza os 3 quadrados */
+    }
+}
+
+:root {
+    --dark-background: #000000;
+    --text-color-light: #F0F2F5;
+    --text-color-dark: #6C757D;
+    --accent-color: #00BCD4;
+    --link-hover-color: #FFFFFF;
+}
+
+/* Footer Geral */
+.main-footer {
+    background-color: var(--dark-background);
+    color: var(--text-color-dark);
+    padding: 40px 30px 20px 30px; 
+    font-family: 'Arial', sans-serif;
+    width: 100vw; 
+    margin-left: calc(50% - 50vw); 
+    box-sizing: border-box; 
+}
+
+.main-footer .container {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 2vw;
+    box-sizing: border-box;
+}
+
+/* Seção Superior do Footer (Logo/Slogan + Links) */
+.main-footer .footer-top-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+}
+
+.main-footer .footer-brand-info {
+    flex-basis: 25%;
+    min-width: 200px;
+    margin-bottom: 20px;
+}
+
+.main-footer .footer-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.main-footer .footer-slogan {
+    color: var(--text-color-light);
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.main-footer .footer-links-group {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+    justify-content: space-around;
+}
+
+.main-footer .footer-section {
+    flex-basis: calc(25% - 20px);
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.main-footer .footer-section h4 {
+    color: var(--text-color-light);
+    font-size: 1em;
+    margin-bottom: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.main-footer .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-footer .footer-section ul li {
+    margin-bottom: 0.8em;
+}
+
+.main-footer .footer-section ul li a {
+    color: var(--text-color-dark);
+    /* Cor padrão para os links */
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.main-footer .footer-section ul li a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Seção Inferior do Footer (Links Legais + Copyright + Redes Sociais) */
+.main-footer .footer-bottom-section {
+    padding-top: 20px;
+}
+
+.main-footer .footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-footer .footer-legal-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.main-footer .footer-legal-links a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: color 0.3s ease;
+}
+
+.main-footer .footer-legal-links a:hover {
+    color: var(--link-hover-color);
+}
+
+.main-footer .footer-copyright {
+    font-size: 0.85em;
+    color: var(--text-color-dark);
+    margin-bottom: 10px;
+    order: 3;
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.main-footer .footer-social-media {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.main-footer .footer-social-media a img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.main-footer .footer-social-media a img:hover {
+    opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .main-footer .footer-top-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .main-footer .footer-brand-info {
+        flex-basis: 100%;
+        margin-bottom: 30px;
+    }
+
+    .main-footer .footer-links-group {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+
+    .main-footer .footer-section {
+        flex-basis: calc(50% - 20px);
+        margin-bottom: 30px;
+        text-align: left;
+    }
+
+    .main-footer .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-footer .footer-legal-links {
+        justify-content: center;
+        order: 1;
+        width: 100%;
+    }
+
+    .main-footer .footer-social-media {
+        justify-content: center;
+        order: 2;
+        width: 100%;
+    }
+
+    .main-footer .footer-copyright {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    .pricing-section .container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-footer .footer-section {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    .main-footer .footer-legal-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
