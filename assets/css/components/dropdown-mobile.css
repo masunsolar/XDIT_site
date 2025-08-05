@@ -9,7 +9,7 @@
 
     /* Estado padrão da seta, sem rotação. Adiciona uma transição suave. */
     .bx-chevron-down {
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.2s ease-in-out;
     }
 
     /* Rotação da seta quando o elemento pai .nav-link-dropdown tiver a classe .open */
