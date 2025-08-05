@@ -1,18 +1,13 @@
 /* --- Seta de Rolagem para Baixo --- */
 @keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
     50% {
-        transform: translateY(-10px);
+        bottom: 10px;
     }
 }
 
 .scroll-down-arrow {
     position: fixed;
-    bottom: 40px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 0;
@@ -24,9 +19,9 @@
     transition: opacity 0.5s ease-in-out;
     cursor: pointer;
     z-index: 100;
-    animation: bounce 2s infinite;
+    animation: bounce 1s infinite;
     opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-out;
 }
 
 /* Classe que esconde a seta (usada pelo JavaScript) */
