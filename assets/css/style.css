@@ -115,12 +115,25 @@
 }
 
 @media (max-width: 640px) {
-    .main-header{
-        
+    .main-nav {
+        padding: 0.3rem 1rem;
     }
-    .main-content{
+
+    .logo {
+        font-size: 1.2rem;
+        line-height: 2rem;
+        font-weight: 700;
+        color: #2563eb;
+    }
+
+    .nav-logo img {
+        width: 56px;
+    }
+
+    .main-content {
         padding: 0;
     }
+
     .main-section {
         height: 100vh;
         display: flex;
