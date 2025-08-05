@@ -1,8 +1,11 @@
 body {
-    background-color: #efeefe;/* Cor de fundo geral da página para dar contraste */
-    font-family: Arial, sans-serif; /* Fonte genérica, ajuste conforme necessário */
+    background-color: #efeefe;
+    /* Cor de fundo geral da página para dar contraste */
+    font-family: Arial, sans-serif;
+    /* Fonte genérica, ajuste conforme necessário */
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* Container */
@@ -56,6 +59,7 @@ body {
     transition: color 0.2s;
     text-decoration: none;
 }
+
 .nav-link:hover {
     color: #2563eb;
 }
@@ -96,143 +100,303 @@ body {
     display: none;
 }
 
+/*========================= testes =========================*/
+/* Estilo para a seção principal */
+.team-section {
+    padding: 40px 20rem;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 
+.team-section h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilo para os cards dos membros */
+.team-member-card {
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px 20px 20px 100px;
+    /* Padding ajustado para a foto da esquerda vazar */
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    /* Essencial para a imagem vazar */
+}
+
+/* Estilo da área da foto vazando para fora do card */
+.member-photo-container {
+    width: 120px;
+    height: 120px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    flex-shrink: 0;
+    position: absolute;
+    /* Posição absoluta para "vazar" */
+    left: -40px;
+    /* Posição para vazar à esquerda */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Estilos para o card com a foto na direita */
+.team-member-card.reverse {
+    flex-direction: row-reverse;
+    padding: 20px 100px 20px 20px;
+    /* Padding ajustado para a foto da direita vazar */
+}
+
+.team-member-card.reverse .member-photo-container {
+    left: auto;
+    /* Desfaz a posição da esquerda */
+    right: -40px;
+    /* Posição para vazar à direita */
+}
+
+/* Estilos do conteúdo de texto */
+.member-info {
+    flex-grow: 1;
+}
+
+.member-info h2 {
+    margin: 0 0 5px 0;
+    color: #555;
+    font-size: 1.5em;
+}
+
+.member-info p {
+    margin: 0 0 15px 0;
+    color: #777;
+}
+
+/* Estilos para os três quadrados no final do texto */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-box {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para o ícone no canto superior direito */
+.top-right-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ccc;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /* História de XDIT */
 .historiaXDit-container {
-    background-color: #b5b9ff; /* Cor de fundo roxa clara (Lavender) */
-    border-radius: 20px; /* Bordas arredondadas */
+    background-color: #b5b9ff;
+    /* Cor de fundo roxa clara (Lavender) */
     padding: 40px;
-    margin: 50px auto; /* Centraliza o contêiner horizontalmente */
-    max-width: 1200px; /* Largura máxima para manter o conteúdo legível */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+    margin: 50px auto;
+    /* Centraliza o contêiner horizontalmente */
+    margin-top: 120px;
+    /* Centraliza o contêiner verticalmente */
+    margin-bottom: 0px;
+    /* Centraliza o contêiner verticalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para destacar a seção */
 }
 
 .historiaXDit-conteudo {
-    display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    gap: 40px; /* Espaço entre a imagem e o texto */
+    display: flex;
+    /* Habilita o Flexbox para alinhar itens lado a lado */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    gap: 40px;
+    /* Espaço entre a imagem e o texto */
 }
 
 .historiaXDit-imagem {
-    flex: 1; /* Ocupa o espaço disponível */
-    max-width: 600px; /* Garante que a imagem não seja maior que o necessário */
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    max-width: 200px;
+    /* Garante que a imagem não seja maior que o necessário */
 }
 
-.historiaXDit-imagem img {
-    width: 100%; /* Faz a imagem ocupar 100% do seu contêiner */
+#us {
+    width: 45rem;
+    /* Faz a imagem ocupar 100% do seu contêiner */
     height: auto;
-    border-radius: 10px; /* Bordas arredondadas na imagem */
+    border-radius: 25px;
+    /* Bordas arredondadas na imagem */
 }
 
 .historiaXDit-texto {
-    flex: 1; /* Ocupa o espaço disponível */
+    flex: 1;
+    /* Ocupa o espaço disponível */
 }
 
 .historiaXDit-texto h2 {
-    font-size: 2.5rem; /* Tamanho da fonte para o título "Nossa História" */
+    font-size: 2.5rem;
+    /* Tamanho da fonte para o título "Nossa História" */
     color: #333;
     margin-bottom: 20px;
 }
 
 .historiaXDit-texto p {
-    font-size: 1.2rem; /* Tamanho da fonte para o parágrafo */
-    line-height: 1.6; /* Espaçamento entre as linhas para melhor legibilidade */
+    font-size: 1.2rem;
+    /* Tamanho da fonte para o parágrafo */
+    line-height: 1.6;
+    /* Espaçamento entre as linhas para melhor legibilidade */
     color: #555;
 }
 
 .missao-container {
-    background-color: #f0f0f0; /* Cor de fundo cinza claro para a seção de missão */
+    background-color: #f0f0f0;
+    /* Cor de fundo cinza claro para a seção de missão */
     padding: 40px;
-    border-radius: 20px; /* Bordas arredondadas */
-    margin-top: 30px; /* Espaço acima da seção de missão */
 }
+
 .missao-texto {
-    text-align: center; /* Centraliza o texto da missão */
+    text-align: center;
+    /* Centraliza o texto da missão */
 }
+
 /* historia de Gabriel */
-.historiaGabriel-container {
-    background-color: #b5b9ff; /* Cor de fundo roxa clara (Lavender) */
-    border-radius: 20px; /* Bordas arredondadas */
+.sobreXdit-container {
+    background-color: #b5b9ff;
+    /* Cor de fundo roxa clara (Lavender) */
+    border-radius: 20px;
+    /* Bordas arredondadas */
     padding: 40px;
-    margin: 50px auto; /* Centraliza o contêiner horizontalmente */
-    max-width: 1200px; /* Largura máxima para manter o conteúdo legível */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+    margin: 50px auto;
+    /* Centraliza o contêiner horizontalmente */
+    max-width: 1200px;
+    /* Largura máxima para manter o conteúdo legível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para destacar a seção */
 }
 
-.historiaGabriel-conteudo {
-    display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    gap: 40px; /* Espaço entre a imagem e o texto */
+.sobreXdit-conteudo {
+    display: flex;
+    /* Habilita o Flexbox para alinhar itens lado a lado */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    gap: 40px;
+    /* Espaço entre a imagem e o texto */
 }
 
-.historiaGabriel-imagem {
-    flex: 1; /* Ocupa o espaço disponível */
-    max-width: 600px; /* Garante que a imagem não seja maior que o necessário */
+.sobreXdit-imagem {
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    max-width: 600px;
+    /* Garante que a imagem não seja maior que o necessário */
 }
 
-.historiaGabriel-imagem img {
-    width: 100%; /* Faz a imagem ocupar 100% do seu contêiner */
+.sobreXdit-imagem img {
+    width: 100%;
+    /* Faz a imagem ocupar 100% do seu contêiner */
     height: auto;
-    border-radius: 10px; /* Bordas arredondadas na imagem */
+    border-radius: 10px;
+    /* Bordas arredondadas na imagem */
 }
 
-.historiaGabriel-texto {
-    flex: 1; /* Ocupa o espaço disponível */
+.sobreXdit-texto {
+    flex: 1;
+    /* Ocupa o espaço disponível */
 }
 
-.historiaGabriel-texto h2 {
-    font-size: 2.5rem; /* Tamanho da fonte para o título "Nossa História" */
+.sobreXdit-texto h2 {
+    font-size: 2.5rem;
+    /* Tamanho da fonte para o título "Nossa História" */
     color: #333;
     margin-bottom: 20px;
 }
 
-.historiaGabriel-texto p {
-    font-size: 1.2rem; /* Tamanho da fonte para o parágrafo */
-    line-height: 1.6; /* Espaçamento entre as linhas para melhor legibilidade */
+.sobreXdit-texto p {
+    font-size: 1.2rem;
+    /* Tamanho da fonte para o parágrafo */
+    line-height: 1.6;
+    /* Espaçamento entre as linhas para melhor legibilidade */
     color: #555;
 }
 
 /* História de Natan */
 .historiaNatan-container {
-    background-color: #b5b9ff; /* Cor de fundo roxa clara (Lavender) */
-    border-radius: 20px; /* Bordas arredondadas */
+    background-color: #b5b9ff;
+    /* Cor de fundo roxa clara (Lavender) */
+    border-radius: 20px;
+    /* Bordas arredondadas */
     padding: 40px;
-    margin: 50px auto; /* Centraliza o contêiner horizontalmente */
-    max-width: 1200px; /* Largura máxima para manter o conteúdo legível */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+    margin: 50px auto;
+    /* Centraliza o contêiner horizontalmente */
+    max-width: 1200px;
+    /* Largura máxima para manter o conteúdo legível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave para destacar a seção */
 }
 
 .historiaNatan-conteudo {
-    display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    gap: 40px; /* Espaço entre a imagem e o texto */
+    display: flex;
+    /* Habilita o Flexbox para alinhar itens lado a lado */
+    align-items: center;
+    /* Alinha os itens verticalmente ao centro */
+    gap: 40px;
+    /* Espaço entre a imagem e o texto */
 }
 
 .historiaNatan-imagem {
-    flex: 1; /* Ocupa o espaço disponível */
-    max-width: 600px; /* Garante que a imagem não seja maior que o necessário */
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    max-width: 600px;
+    /* Garante que a imagem não seja maior que o necessário */
 }
 
 .historiaNatan-imagem img {
-    width: 100%; /* Faz a imagem ocupar 100% do seu contêiner */
+    width: 100%;
+    /* Faz a imagem ocupar 100% do seu contêiner */
     height: auto;
-    border-radius: 10px; /* Bordas arredondadas na imagem */
+    border-radius: 10px;
+    /* Bordas arredondadas na imagem */
 }
 
 .historiaNatan-texto {
-    flex: 1; /* Ocupa o espaço disponível */
+    flex: 1;
+    /* Ocupa o espaço disponível */
 }
 
 .historiaNatan-texto h2 {
-    font-size: 2.5rem; /* Tamanho da fonte para o título "Nossa História" */
+    font-size: 2.5rem;
+    /* Tamanho da fonte para o título "Nossa História" */
     color: #333;
     margin-bottom: 20px;
 }
 
 .historiaNatan-texto p {
-    font-size: 1.2rem; /* Tamanho da fonte para o parágrafo */
-    line-height: 1.6; /* Espaçamento entre as linhas para melhor legibilidade */
+    font-size: 1.2rem;
+    /* Tamanho da fonte para o parágrafo */
+    line-height: 1.6;
+    /* Espaçamento entre as linhas para melhor legibilidade */
     color: #555;
 }
 
@@ -240,8 +404,10 @@ body {
 /* Media queries para telas menores, como tablets e celulares */
 @media (max-width: 768px) {
     .historia-conteudo {
-        flex-direction: column; /* Em telas menores, os itens ficam um embaixo do outro */
-        text-align: center; /* Centraliza o texto */
+        flex-direction: column;
+        /* Em telas menores, os itens ficam um embaixo do outro */
+        text-align: center;
+        /* Centraliza o texto */
     }
 
     .historia-container {
@@ -257,7 +423,7 @@ body {
         font-size: 1rem;
     }
 
-    .hamburger-btn{
+    .hamburger-btn {
         padding-right: 3rem;
     }
 }
@@ -423,7 +589,8 @@ body {
     .container {
         max-width: 640px;
     }
-    .hamburger-btn{
+
+    .hamburger-btn {
         padding-right: 3rem;
     }
 }
@@ -437,7 +604,8 @@ body {
         display: flex;
         gap: 2rem;
     }
-    .hamburger-btn{
+
+    .hamburger-btn {
         padding-right: 3rem;
     }
 }
@@ -501,5 +669,176 @@ body {
         font-size: 1.5em;
         color: #0a2540;
         cursor: pointer;
+    }
+}
+
+/* ==========================
+   Responsividade
+========================== */
+@media (max-width: 1024px) {
+    .team-section {
+        padding: 40px 5rem;
+    }
+
+    .historiaXDit-conteudo,
+    .sobreXdit-conteudo,
+    .historiaNatan-conteudo {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-section {
+        padding: 30px 2rem;
+    }
+
+    .team-member-card {
+        flex-direction: column;
+        padding: 100px 20px 20px 20px;
+        text-align: center;
+    }
+
+    .team-member-card.reverse {
+        flex-direction: column;
+        padding: 100px 20px 20px 20px;
+    }
+
+    .member-photo-container {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
+    .top-right-icon {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .historiaXDit-conteudo,
+    .sobreXdit-conteudo,
+    .historiaNatan-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .historiaXDit-imagem,
+    .sobreXdit-imagem,
+    .historiaNatan-imagem {
+        max-width: 80%;
+    }
+
+    #us {
+        width: 100%;
+    }
+
+    .historiaXDit-texto h2,
+    .sobreXdit-texto h2,
+    .historiaNatan-texto h2 {
+        font-size: 2rem;
+    }
+
+    .historiaXDit-texto p,
+    .sobreXdit-texto p,
+    .historiaNatan-texto p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-section {
+        padding: 20px 1rem;
+    }
+
+    .team-member-card {
+        padding: 80px 15px 15px 15px;
+    }
+
+    .member-photo-container {
+        width: 90px;
+        height: 90px;
+    }
+
+    .member-info h2 {
+        font-size: 1.2em;
+    }
+
+    .member-info p {
+        font-size: 0.9em;
+    }
+
+    .social-box {
+        width: 20px;
+        height: 20px;
+    }
+
+    .historiaXDit-texto h2,
+    .sobreXdit-texto h2,
+    .historiaNatan-texto h2 {
+        font-size: 1.5rem;
+    }
+
+    .historiaXDit-texto p,
+    .sobreXdit-texto p,
+    .historiaNatan-texto p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-member-card {
+        flex-direction: column;
+        align-items: center;
+        /* <-- garante alinhamento central */
+        justify-content: center;
+        padding: 100px 20px 20px 20px;
+        text-align: center;
+    }
+
+    .team-member-card.reverse {
+        flex-direction: column;
+        align-items: center;
+        /* <-- mesmo alinhamento para o reverse */
+        justify-content: center;
+        padding: 100px 20px 20px 20px;
+    }
+
+    .member-photo-container {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+        /* <-- centraliza os 3 quadrados */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .team-member-card.reverse .member-photo-container {
+        right: 0;
+    }
+
+    .member-photo-container {
+        position: relative;
+        left: 0;
+        right: 0;
+        top: 0;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
+    .social-links {
+        justify-content: center;
+        /* centraliza os 3 quadrados */
     }
 }
