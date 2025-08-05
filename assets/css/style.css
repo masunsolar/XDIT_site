@@ -68,6 +68,10 @@
 }
 
 @media (max-width: 1000px) {
+    .main-section {
+        padding: 20vh 4vw;
+    }
+
     .main-title {
         padding: 1rem;
     }
