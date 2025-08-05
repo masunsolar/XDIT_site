@@ -98,3 +98,18 @@
         flex-wrap: nowrap;
     }
 }
+
+@media (max-width: 1025) {
+    .dropdown-item-mobile {
+        display: block;
+        padding: 12px 16px;
+        color: #4b5563;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-item-mobile:hover {
+        background: #f1f1f1;
+        color: #2563eb;
+    }
+}
