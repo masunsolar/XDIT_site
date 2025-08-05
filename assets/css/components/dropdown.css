@@ -1,58 +1,86 @@
-/* Estilos para o Dropdown */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+@media (min-width: 1025px) {
+    /* Container principal do dropdown */
+    .nav-link-dropdown {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+    }
 
-.dropdown-menu {
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 100;
-    border-radius: 0.5rem;
-    top: 100%;
-    left: 0;
+    /* O wrapper do texto "Serviços" e da seta */
+    .dropdown-toggle-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+    
+    /* Rotação da seta no hover */
+    .nav-link-dropdown:hover .bx-chevron-down {
+        transform: rotate(180deg);
+    }
+    
+    .bx-chevron-down {
+        transition: transform 0.3s ease-in-out;
+    }
 
-    max-height: 0;
-    overflow: hidden; 
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out; 
-}
+    /* Estilos para o dropdown-menu de desktop */
+    .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        min-width: 200px;
+        background-color: #ffffff; /* <- CORREÇÃO: Garante a cor de fundo */
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 100;
+        border-radius: 0.5rem;
+        
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: visibility 0s 0.3s, max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+        
+        /* IMPORTANTE: Garante que os itens internos não herdem o display flex de mobile */
+        display: block; 
+    }
 
-.dropdown-menu.visible { 
-    padding: 10px 0; 
-}
+    /* Estado de hover para o dropdown de desktop */
+    .nav-link-dropdown:hover .dropdown-menu {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        padding: 10px 0;
+        transition: visibility 0s, max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
 
-.dropdown:hover .dropdown-menu {
-    max-height: 300px;
-    padding: 10px 0; 
-}
+    /* Estilos para os itens do dropdown */
+    .dropdown-item {
+        color: #4b5563;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        transition: background-color 0.2s, color 0.2s;
+        white-space: nowrap;
+    }
+    
+    .dropdown-item:hover {
+        background-color: #f1f1f1;
+        color: #2563eb;
+    }
 
-.dropdown-menu.active {
-    max-height: 300px;
-    padding: 10px 0;
-}
-
-.dropdown-menu .dropdown-item {
-    color: #4b5563;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.dropdown-menu .dropdown-item:hover {
-    background-color: #f1f1f1;
-    color: #2563eb;
-}
-
-.nav-link.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.nav-link.dropdown-toggle:hover {
-    color: #2563eb;
+    /* Zera os estilos de mobile para evitar conflito */
+    .dropdown-mobile {
+        /* Essas regras garantem que os estilos de mobile não afetem o desktop */
+        position: absolute; 
+        box-shadow: none;
+        background: transparent;
+        transition: none;
+        padding-left: 0;
+        transform: none;
+        height: auto;
+        opacity: 1;
+        pointer-events: auto;
+    }
 }

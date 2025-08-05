@@ -19,47 +19,6 @@
 @import url("./components/dropdown.css");
 @import url("./components/dropdown-mobile.css");
 
-/* ========== DESKTOP DROPDOWN (hover) ========= */
-@media (min-width: 1025px) {
-    .nav-link-dropdown {
-        position: relative;
-        cursor: pointer;
-        user-select: none;
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
-
-    .nav-link-dropdown .bx {
-        transition: transform 0.3s ease;
-    }
-
-    /* Dropdown container (desktop) */
-    .nav-link-dropdown .dropdown-mobile {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 200px;
-        background: #fff;
-        border-radius: 0.5rem;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
-            transform 0.3s ease-out, padding 0.3s ease-out;
-        padding: 0;
-    }
-
-    .nav-link-dropdown:hover .dropdown-mobile {
-        max-height: 500px;
-        opacity: 1;
-        transform: translateY(0);
-        padding: 10px 0;
-    }
-}
-
 /* ========== BREAKPOINTS ESTRUTURAIS ========= */
 @media (min-width: 640px) {
     .container {

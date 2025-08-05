@@ -1,64 +1,58 @@
-/* ========== MOBILE DROPDOWN (clique) & MENU MOBILE GERAL ========= */
+/* ========== MOBILE DROPDOWN & MENU MOBILE GERAL ========== */
 @media (max-width: 1024px) {
 
-    .dropdown-mobile,
-    .header-nav-links,
-    .header-nav-links.submenu {
-        opacity: 0;
-        pointer-events: none;
-        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    }
-
-    .dropdown-mobile.open,
-    .header-nav-links.open,
-    .header-nav-links.submenu.open {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    .dropdown-mobile {
-        transform-origin: top;
-        transform: scaleY(0);
-        height: 0;
-        padding: 0;
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, height 0.3s ease-in-out;
-        display: flex;
+    /* Alinha os itens do menu no mobile */
+    .header-nav-links {
         flex-direction: column;
         align-items: flex-start;
-        width: 100%;
+    }
+
+    /* Estado padrão da seta, sem rotação. Adiciona uma transição suave. */
+    .bx-chevron-down {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Rotação da seta quando o elemento pai .nav-link-dropdown tiver a classe .open */
+    .nav-link-dropdown.open .bx-chevron-down {
+        transform: rotate(180deg);
+    }
+
+    /* Estilos do dropdown (início: oculto) */
+    .dropdown-menu {
+        max-height: 0;
         overflow: hidden;
-        position: static;
-        box-shadow: none;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
         background: transparent;
+        box-shadow: none;
+        padding: 0;
+        width: 100%;
+        position: static;
+        display: flex;
+        flex-direction: column;
         gap: 0.5rem;
         padding-left: 2.2rem;
+        /* Adiciona indentação para os itens */
     }
 
-    .dropdown-mobile.open {
-        transform: scaleY(1);
-        height: 165px;
+    /* Estado aberto do dropdown */
+    .dropdown-menu.open {
+        max-height: 200px;
     }
 
-    /* Regras específicas para dropdown-mobile a */
-    .dropdown-mobile a {
-        display: block;
-        width: 100%;
-        padding: 0.5rem 0;
+    /* Estilos para os links do dropdown */
+    .dropdown-menu a {
         color: #2563eb;
-        text-decoration: none;
-        font-size: 1rem;
-        line-height: 1.4;
-        white-space: normal;
     }
 
-    .dropdown-mobile a:hover {
+    .dropdown-menu a:hover {
         background: #e0e7ff;
         color: #1e293b;
     }
 
-    /* Regras específicas para o menu mobile geral */
+    /* Regras para o menu mobile geral */
     .hamburger-btn {
         display: flex;
+        /* Garante que o botão do hambúrguer apareça no mobile */
     }
 
     .header-nav-links {
@@ -69,36 +63,25 @@
         width: 100vw;
         height: 100vh;
         background: #fff;
-        flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-start;
         padding: 90px 2rem 2rem 2rem;
         gap: 1.5rem;
         z-index: 1000;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
         transform: translateY(-100%);
+        transition: transform 0.4s ease-out;
+        pointer-events: none;
+        /* Impede cliques quando o menu está fechado */
     }
 
     .header-nav-links.open {
         transform: translateY(0);
-    }
-
-    .header-nav-links.submenu {
-        height: 100%;
-        z-index: 1002;
-        display: flex;
-        transform: translateY(-100%);
-    }
-
-    .header-nav-links.submenu.open {
-        transform: translateY(0);
-    }
-
-    .main-nav {
-        flex-wrap: nowrap;
+        pointer-events: auto;
+        /* Permite cliques quando o menu está aberto */
     }
 }
 
+/* Opcional: para o dropdown em telas um pouco maiores, se necessário */
 @media (max-width: 1025) {
     .dropdown-item-mobile {
         display: block;
