@@ -1,0 +1,505 @@
+body {
+    background-color: #efeefe;/* Cor de fundo geral da página para dar contraste */
+    font-family: Arial, sans-serif; /* Fonte genérica, ajuste conforme necessário */
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    margin: auto;
+    padding: 0px 1.5rem;
+}
+
+/* Header and Navigation */
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #2563eb;
+}
+
+.nav-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-logo img {
+    width: 72px;
+}
+
+.header-nav-links {
+    display: none;
+}
+
+.nav-link {
+    color: #4b5563;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+.nav-link:hover {
+    color: #2563eb;
+}
+
+/* =================== MENU HAMBURGUER RESPONSIVO =================== */
+
+/* Botão hambúrguer - só aparece no mobile */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-bar {
+    width: 28px;
+    height: 3px;
+    background: #2563eb;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+/* Menus mobile */
+.header-nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.header-nav-links.submenu {
+    display: none;
+}
+
+
+
+/* História de XDIT */
+.historiaXDit-container {
+    background-color: #b5b9ff; /* Cor de fundo roxa clara (Lavender) */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 40px;
+    margin: 50px auto; /* Centraliza o contêiner horizontalmente */
+    max-width: 1200px; /* Largura máxima para manter o conteúdo legível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+}
+
+.historiaXDit-conteudo {
+    display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 40px; /* Espaço entre a imagem e o texto */
+}
+
+.historiaXDit-imagem {
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 600px; /* Garante que a imagem não seja maior que o necessário */
+}
+
+.historiaXDit-imagem img {
+    width: 100%; /* Faz a imagem ocupar 100% do seu contêiner */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+}
+
+.historiaXDit-texto {
+    flex: 1; /* Ocupa o espaço disponível */
+}
+
+.historiaXDit-texto h2 {
+    font-size: 2.5rem; /* Tamanho da fonte para o título "Nossa História" */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.historiaXDit-texto p {
+    font-size: 1.2rem; /* Tamanho da fonte para o parágrafo */
+    line-height: 1.6; /* Espaçamento entre as linhas para melhor legibilidade */
+    color: #555;
+}
+
+.missao-container {
+    background-color: #f0f0f0; /* Cor de fundo cinza claro para a seção de missão */
+    padding: 40px;
+    border-radius: 20px; /* Bordas arredondadas */
+    margin-top: 30px; /* Espaço acima da seção de missão */
+}
+.missao-texto {
+    text-align: center; /* Centraliza o texto da missão */
+}
+/* historia de Gabriel */
+.historiaGabriel-container {
+    background-color: #b5b9ff; /* Cor de fundo roxa clara (Lavender) */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 40px;
+    margin: 50px auto; /* Centraliza o contêiner horizontalmente */
+    max-width: 1200px; /* Largura máxima para manter o conteúdo legível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+}
+
+.historiaGabriel-conteudo {
+    display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 40px; /* Espaço entre a imagem e o texto */
+}
+
+.historiaGabriel-imagem {
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 600px; /* Garante que a imagem não seja maior que o necessário */
+}
+
+.historiaGabriel-imagem img {
+    width: 100%; /* Faz a imagem ocupar 100% do seu contêiner */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+}
+
+.historiaGabriel-texto {
+    flex: 1; /* Ocupa o espaço disponível */
+}
+
+.historiaGabriel-texto h2 {
+    font-size: 2.5rem; /* Tamanho da fonte para o título "Nossa História" */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.historiaGabriel-texto p {
+    font-size: 1.2rem; /* Tamanho da fonte para o parágrafo */
+    line-height: 1.6; /* Espaçamento entre as linhas para melhor legibilidade */
+    color: #555;
+}
+
+/* História de Natan */
+.historiaNatan-container {
+    background-color: #b5b9ff; /* Cor de fundo roxa clara (Lavender) */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 40px;
+    margin: 50px auto; /* Centraliza o contêiner horizontalmente */
+    max-width: 1200px; /* Largura máxima para manter o conteúdo legível */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar a seção */
+}
+
+.historiaNatan-conteudo {
+    display: flex; /* Habilita o Flexbox para alinhar itens lado a lado */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    gap: 40px; /* Espaço entre a imagem e o texto */
+}
+
+.historiaNatan-imagem {
+    flex: 1; /* Ocupa o espaço disponível */
+    max-width: 600px; /* Garante que a imagem não seja maior que o necessário */
+}
+
+.historiaNatan-imagem img {
+    width: 100%; /* Faz a imagem ocupar 100% do seu contêiner */
+    height: auto;
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+}
+
+.historiaNatan-texto {
+    flex: 1; /* Ocupa o espaço disponível */
+}
+
+.historiaNatan-texto h2 {
+    font-size: 2.5rem; /* Tamanho da fonte para o título "Nossa História" */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.historiaNatan-texto p {
+    font-size: 1.2rem; /* Tamanho da fonte para o parágrafo */
+    line-height: 1.6; /* Espaçamento entre as linhas para melhor legibilidade */
+    color: #555;
+}
+
+
+/* Media queries para telas menores, como tablets e celulares */
+@media (max-width: 768px) {
+    .historia-conteudo {
+        flex-direction: column; /* Em telas menores, os itens ficam um embaixo do outro */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .historia-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .historia-texto h2 {
+        font-size: 2rem;
+    }
+
+    .historia-texto p {
+        font-size: 1rem;
+    }
+
+    .hamburger-btn{
+        padding-right: 3rem;
+    }
+}
+
+/* ========== DESKTOP DROPDOWN (hover) ========= */
+@media (min-width: 1025px) {
+    .nav-link-dropdown {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .nav-link-dropdown .bx {
+        transition: transform 0.3s ease;
+    }
+
+    /* Dropdown container (desktop) */
+    .nav-link-dropdown .dropdown-mobile {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 200px;
+        background: #fff;
+        border-radius: 0.5rem;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: max-height 0.3s ease-out, opacity 0.3s ease-out,
+            transform 0.3s ease-out, padding 0.3s ease-out;
+        padding: 0;
+    }
+
+    .nav-link-dropdown:hover .dropdown-mobile {
+        max-height: 500px;
+        opacity: 1;
+        transform: translateY(0);
+        padding: 10px 0;
+    }
+
+    /* Estilo dos itens */
+    .dropdown-item-mobile {
+        display: block;
+        padding: 12px 16px;
+        color: #4b5563;
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .dropdown-item-mobile:hover {
+        background: #f1f1f1;
+        color: #2563eb;
+    }
+}
+
+/* ========== MOBILE DROPDOWN (clique) & MENU MOBILE GERAL ========= */
+@media (max-width: 1024px) {
+
+    .dropdown-mobile,
+    .header-nav-links,
+    .header-nav-links.submenu {
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    .dropdown-mobile.open,
+    .header-nav-links.open,
+    .header-nav-links.submenu.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .dropdown-mobile {
+        transform-origin: top;
+        transform: scaleY(0);
+        height: 0;
+        padding: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        overflow: hidden;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        gap: 0.5rem;
+        padding-left: 2.2rem;
+    }
+
+    .dropdown-mobile.open {
+        transform: scaleY(1);
+        height: 165px;
+    }
+
+    /* Regras específicas para dropdown-mobile a */
+    .dropdown-mobile a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+        color: #2563eb;
+        text-decoration: none;
+        font-size: 1rem;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+    .dropdown-mobile a:hover {
+        background: #e0e7ff;
+        color: #1e293b;
+    }
+
+    /* Regras específicas para o menu mobile geral */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    .header-nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 90px 2rem 2rem 2rem;
+        gap: 1.5rem;
+        z-index: 1000;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        transform: translateY(-100%);
+    }
+
+    .header-nav-links.open {
+        transform: translateY(0);
+    }
+
+    .header-nav-links.submenu {
+        height: 100%;
+        z-index: 1002;
+        display: flex;
+        transform: translateY(-100%);
+    }
+
+    .header-nav-links.submenu.open {
+        transform: translateY(0);
+    }
+
+    .main-nav {
+        flex-wrap: nowrap;
+    }
+}
+
+/* ========== BREAKPOINTS ESTRUTURAIS ========= */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+    .hamburger-btn{
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .header-nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+    .hamburger-btn{
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+@media (max-width: 700px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .header-inner {
+        position: relative;
+    }
+
+    .header-inner button.menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #0a2540;
+        cursor: pointer;
+    }
+}

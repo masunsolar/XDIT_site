@@ -1,0 +1,50 @@
+ <!-- 
+        <section id="jornada" class="page-section">
+            <div class="section-header">
+                <h2 class="section-title">A Jornada de Desenvolvimento</h2>
+                <p class="section-subtitle">Temos um plano claro e objetivo para entregar o MVP em 4 meses. Cada etapa possui marcos e entregáveis bem definidos, garantindo agilidade e foco. Clique em cada fase para ver os detalhes.</p>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-nav">
+                    <div id="timeline-list">
+                        <div class="timeline-item timeline-item-active" data-timeline="1">
+                            <h4 class="timeline-item-title">Mês 1: Estrutura e Base</h4>
+                            <p class="timeline-item-subtitle">Fundação técnica do projeto.</p>
+                        </div>
+                        <div class="timeline-item" data-timeline="2">
+                            <h4 class="timeline-item-title">Mês 2: Motor Fiscal</h4>
+                            <p class="timeline-item-subtitle">Desenvolvimento do core da aplicação.</p>
+                        </div>
+                        <div class="timeline-item" data-timeline="3">
+                            <h4 class="timeline-item-title">Mês 3: Interface e Experiência</h4>
+                            <p class="timeline-item-subtitle">Criação da experiência do usuário.</p>
+                        </div>
+                        <div class="timeline-item" data-timeline="4">
+                            <h4 class="timeline-item-title">Mês 4: Refinamento e Piloto</h4>
+                            <p class="timeline-item-subtitle">Testes e lançamento da versão beta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-content-wrapper">
+                    <div id="timeline-content">
+                        <div class="timeline-pane" data-timeline-content="1">
+                            <h3 class="timeline-pane-title">Marco 1: Infraestrutura Cloud Funcional</h3>
+                            <p class="timeline-pane-text">Nesta fase, o foco é ter a plataforma no ar, segura e pronta para os próximos passos. Os entregáveis incluem o setup completo da infraestrutura cloud (Firebase/Supabase), a configuração do banco de dados (PostgreSQL) e a implementação do sistema de autenticação e segurança.</p>
+                        </div>
+                        <div class="timeline-pane hidden" data-timeline-content="2">
+                            <h3 class="timeline-pane-title">Marco 2: Motor de Validação Operante</h3>
+                            <p class="timeline-pane-text">Aqui, desenvolvemos a inteligência central do X-Dit. O objetivo é ter o motor de validação fiscal funcionando, com as principais regras para NF-e e CT-e implementadas. A importação de XML em lote também será entregue, garantindo a principal proposta de valor do produto.</p>
+                        </div>
+                        <div class="timeline-pane hidden" data-timeline-content="3">
+                            <h3 class="timeline-pane-title">Marco 3: MVP Funcional para Demonstração</h3>
+                            <p class="timeline-pane-text">Com o backend pronto, construímos a interface que o usuário irá interagir. Entregaremos o dashboard principal, as telas de consulta de notas, o módulo de geração de relatórios e o sistema de alertas, resultando em uma versão completa e funcional para demonstrações.</p>
+                        </div>
+                        <div class="timeline-pane hidden" data-timeline-content="4">
+                            <h3 class="timeline-pane-title">Marco 4: Início do Programa Piloto</h3>
+                            <p class="timeline-pane-text">A fase final do MVP consiste em testes de ponta a ponta e correções de bugs. O grande marco é o lançamento da versão beta para um grupo selecionado de clientes-piloto, que nos fornecerão feedback valioso para o aprimoramento contínuo da solução.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
