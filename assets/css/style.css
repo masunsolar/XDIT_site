@@ -9,6 +9,7 @@
 @import url("./layout/main-sections.css");
 @import url("./layout/footer.css");
 @import url("./layout/pricing.css");
+@import url("./layout/intro.css");
 
 @import url("./components/buttons.css");
 @import url("./components/cards.css");
@@ -326,6 +327,10 @@
 
 /* Responsividade */
 @media (max-width: 992px) {
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+
     .main-footer .footer-top-section {
         flex-direction: column;
         align-items: center;

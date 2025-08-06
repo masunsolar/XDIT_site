@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeAllMenus() {
         mainMenu && mainMenu.classList.remove('open');
         dropdownServicos && dropdownServicos.classList.remove('open');
-        openServicos && openServicos.classList.remove('open'); // Adiciona esta linha
+        openServicos && openServicos.classList.remove('open');
         document.body.classList.remove('menu-open');
     }
 
@@ -21,22 +21,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     openServicos && openServicos.addEventListener('click', (e) => {
-        // Só ativa no mobile
         if (window.innerWidth > 1024) return;
         e.preventDefault();
         dropdownServicos.classList.toggle('open');
-        openServicos.classList.toggle('open'); // Adiciona esta linha
+        openServicos.classList.toggle('open');
     });
 
-    // Fecha menu ao clicar em qualquer link
     document.querySelectorAll('[data-menu="close"]').forEach(link => {
         link.addEventListener('click', closeAllMenus);
     });
 
-    // Fecha menu ao redimensionar para desktop
     window.addEventListener('resize', () => {
         if (window.innerWidth > 1024) {
             closeAllMenus();
+        }
+    });
+
+    // --- Adicionando a lógica de scroll para mobile ---
+    let lastScrollTop = 0;
+    const mainHeader = document.querySelector('.main-header');
+    const scrollThreshold = 50;
+
+    window.addEventListener('scroll', function() {
+        // Só executa a lógica se for uma tela pequena (mobile)
+        if (window.innerWidth <= 1024) {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+                // Rola para baixo, esconde o header
+                mainHeader.classList.add('header-hidden');
+            } else if (currentScroll < lastScrollTop) {
+                // Rola para cima, mostra o header
+                mainHeader.classList.remove('header-hidden');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        } else {
+            // Em telas grandes, garante que o header esteja sempre visível
+            mainHeader.classList.remove('header-hidden');
         }
     });
 });

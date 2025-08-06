@@ -7,11 +7,18 @@
 .main-header {
     background-color: #ffffff;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
-    position: fixed;
+    /* Remove 'position: fixed' aqui para o desktop */
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    /* Adiciona a transição para a animação */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Classe que vai esconder o header */
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 .main-nav {
@@ -38,15 +45,12 @@
     width: 72px;
 }
 
-.header-nav-links {
-    display: none;
-}
-
 .nav-link {
     color: #4b5563;
     transition: color 0.2s;
     text-decoration: none;
 }
+
 .nav-link:hover {
     color: #2563eb;
 }
@@ -85,4 +89,38 @@
 
 .header-nav-links.submenu {
     display: none;
+}
+
+@media (max-width: 1024px) {
+
+    /* No mobile, o header é fixo e esconde/mostra com a rolagem */
+    .main-header {
+        position: fixed;
+        transform: translateY(0);
+    }
+
+    /* Exibe o menu hambúrguer no mobile */
+    .hamburger-btn {
+        display: flex;
+    }
+
+    /* Esconde os links principais por padrão no mobile */
+    .header-nav-links {
+        display: none;
+    }
+
+    /* Estilos para o menu hambúrguer aberto */
+    .main-menu.open {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        padding: 2rem;
+        z-index: 999;
+        justify-content: flex-start;
+    }
 }

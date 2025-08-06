@@ -67,6 +67,14 @@
     letter-spacing: 1px;
 }
 
+#main-about {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.6em;
+    color: #666;
+    margin-bottom: 32px;
+}
+
 /*==================== main LOGO =====================*/
 .main-logo {
     display: flex;
