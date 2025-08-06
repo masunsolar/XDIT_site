@@ -407,3 +407,16 @@
         gap: 10px;
     }
 }
+
+@media (max-height: 900px)  and (max-width: 768px) {
+    .main-logo img{
+        width: 200px;
+        height: auto;
+    }
+    .main-text h1 {
+        font-size: 1.4em;
+    }
+    #main-about {
+        font-size: 1em;
+    }
+}
