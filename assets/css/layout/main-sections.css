@@ -1,7 +1,7 @@
 /* Main Content and Sections */
 .page-section {
-    margin: 10rem auto;
-    padding: 0px 3rem;
+    padding: 10rem;
+    padding: 10rem 3rem;
     display: flex;
     flex-direction: column; /* Empilha os itens na vertical */
     justify-content: center; /* Alinha o grupo inteiro no centro vertical */

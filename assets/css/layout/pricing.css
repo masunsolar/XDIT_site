@@ -1,13 +1,11 @@
 .pricing-section {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
-    padding: 4rem 15rem
 }
 
 .pricing-section .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 7rem;
 }
 
 .section-title {
@@ -28,10 +26,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    justify-items: center;
+    align-items: center;
 }
 
 .pricing-card {
-    height: 700px;
+    max-height: 800px;
+    min-width: 290px;
+    max-width: 460px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -47,6 +49,8 @@
 
 /* Estilos Específicos para o Card "Mais Popular" */
 .pricing-card.popular {
+    height: 850px;
+    flex-grow: 1.;
     border-width: 2px;
     border-color: #eeff00;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
@@ -242,6 +246,7 @@
 .pricing-card:hover {
     border-color: #007bff;
     box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
-    transform: scale(1.03);
+    transform: scale(1.05);
+    z-index: 10;
     transition: transform 0.2s ease-in-out;
 }

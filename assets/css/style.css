@@ -22,6 +22,14 @@
 
 /* ========== BREAKPOINTS ESTRUTURAIS ========= */
 @media (min-width: 640px) {
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+
+    .main-section {
+        height: 89vh;
+    }
+
     .container {
         max-width: 640px;
     }
@@ -29,7 +37,7 @@
 
 @media (max-width: 1000px) {
     .main-section {
-        padding: 20vh 4vw;
+        height: 89vh;
     }
 
     .main-title {
@@ -162,7 +170,7 @@
 
     .main-section {
         grid-template-columns: 1fr 1fr;
-        padding: 20vh 4vw;
+        height: 89vh;
     }
 
     .main-title {
@@ -219,19 +227,35 @@
         grid-template-columns: 1fr;
     }
 
+    .pricing-card{
+        height: 100%;
+        width: 100%;
+    }
+
     .pricing-card.popular {
         margin-top: 20px;
+        height: 100%;
+    }
+
+    .pricing-card.popular:hover{
+        transform: scale(1.2);
     }
 
     .pricing-card:hover {
         border-color: #007bff;
         box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
-        transform: scale(1.03);
+        transform: scale(1.05);
         transition: transform 0.2s ease-in-out;
     }
 }
 
 @media (min-width: 1024px) {
+    .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
     .container {
         max-width: 1024px;
     }
@@ -327,10 +351,6 @@
 
 /* Responsividade */
 @media (max-width: 992px) {
-    .header-hidden {
-        transform: translateY(-100%);
-    }
-
     .main-footer .footer-top-section {
         flex-direction: column;
         align-items: center;
