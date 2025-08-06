@@ -44,7 +44,7 @@
                         <a href="pages/services/#" class="dropdown-item" data-menu="close">Relatórios Personalizados</a>
                     </div>
                 </div>
-                <a href="#" class="nav-link" data-menu="close">Contato</a>
+                <a href="#form-section" class="nav-link" data-menu="close">Contato</a>
                 <a href="./pages/login/login.html" class="nav-link" data-menu="close">Login</a>
             </div>
         </nav>
@@ -251,7 +251,7 @@
             </div>
 
             <!-- O atributo 'action' deve ser substituído pelo URL do seu formulário Formspree -->
-            <form class="contact-form" id="contactForm" action="https://formspree.io/f/manbparv" method="POST">
+            <form class="contact-form" action="https://formsubmit.co/companyxdit@gmail.com" method="POST">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="name">Nome *</label>
@@ -274,13 +274,12 @@
                     <label for="message">Mensagem *</label>
                     <textarea id="message" name="Mensagem" rows="5" class="form-textarea" required></textarea>
                 </div>
+                <p class="form-disclaimer">* Campos obrigatórios</p>
                 <div>
-                    <button type="submit" class="submit-button" id="submitButton">
-                        Enviar
-                    </button>
+                    <button type="submit" class="submit-button" id="submitButton"> Enviar </button>
+                    <input type="hidden" name="_captcha" value="false">
                 </div>
-                <!-- Elemento para exibir mensagens de status -->
-                <div id="formStatus" class="form-status-message" style="display: none;"></div>
+                <input type="hidden" name="_next" value="https://xdit.vercel.app">
             </form>
         </section>
     </main>
@@ -344,7 +343,8 @@
                 </div>
                 <p class="footer-copyright">&copy; 2025 DIT-X Soluções Fiscais. Todos os direitos reservados.</p>
                 <div class="footer-social-media">
-                    <a href="#" target="_blank"><img src="./assets/images/instalogo.png" alt="LinkedIn" aria-label="LinkedIn"></a>
+                    <a href="#" target="_blank"><img src="./assets/images/instalogo.png" alt="LinkedIn"
+                            aria-label="LinkedIn"></a>
                     <!--a href="https://www.instagram.com/xdit_fiscal/" target="_blank"><img src="img/icone-instagram.svg" alt="Instagram" aria-label="Instagram"></a>
                     <a href="#"><img src="img/icone-facebook.svg" alt="Facebook" aria-label="Facebook"></a-->
                 </div>

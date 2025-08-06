@@ -20,6 +20,7 @@
 @import url("./components/dropdown.css");
 @import url("./components/dropdown-mobile.css");
 @import url("./components/forms.css");
+@import url("./components/pop-up.css");
 
 /* ========== BREAKPOINTS ESTRUTURAIS ========= */
 @media (min-width: 640px) {

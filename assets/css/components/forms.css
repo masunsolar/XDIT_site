@@ -1,160 +1,158 @@
-        /* Estilo para a seção principal do formulário */
-        .form-section {
-            width: 100%;
-            background-color: #2D3748;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            color: #FFFFFF;
-        }
+/* Estilo para a seção principal do formulário */
+.form-section {
+    width: 100%;
+    background-color: #2D3748;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    color: #FFFFFF;
+}
 
-        /* Ajustes de padding para telas maiores */
-        @media (min-width: 768px) {
-            .form-section {
-                padding: 3rem;
-            }
-        }
+/* Ajustes de padding para telas maiores */
+@media (min-width: 768px) {
+    .form-section {
+        padding: 3rem;
+    }
+}
 
-        /* Estilo para o cabeçalho e parágrafos introdutórios */
-        .intro-content {
-            margin-bottom: 2rem;
-            text-align: center;
-        }
+/* Estilo para o cabeçalho e parágrafos introdutórios */
+.intro-content {
+    margin-bottom: 2rem;
+    text-align: center;
+}
 
-        .intro-content h2 {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.25;
-        }
+.intro-content h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
 
-        .intro-content p {
-            color: #CBD5E0;
-            font-size: 1.125rem;
-            margin-bottom: 1.5rem;
-        }
+.intro-content p {
+    color: #CBD5E0;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
 
-        /* Alinhamento do texto para telas maiores */
-        @media (min-width: 768px) {
-            .intro-content {
-                text-align: left;
-            }
-        }
+/* Alinhamento do texto para telas maiores */
+@media (min-width: 768px) {
+    .intro-content {
+        text-align: left;
+    }
+}
 
-        /* Estilo para o formulário */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+/* Estilo para o formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 
-        /* Estilo para o grid de campos (duas colunas em telas maiores) */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
+/* Estilo para o grid de campos (duas colunas em telas maiores) */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
 
-        @media (min-width: 768px) {
-            .form-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-        /* Estilo para os grupos de label e input */
-        .form-group {
-            margin-bottom: 0.25rem;
-        }
+/* Estilo para os grupos de label e input */
+.form-group {
+    margin-bottom: 0.25rem;
+}
 
-        .form-group label {
-            display: block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #E2E8F0;
-        }
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #E2E8F0;
+}
 
-        /* Estilo para os inputs e textareas (borda inferior) */
-        .form-input,
-        .form-textarea {
-            resize: none;
-            border: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-            background-color: transparent;
-            color: white;
-            width: 100%;
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            font-size: 1rem;
-            transition: border-bottom-color 150ms ease-in-out;
-            outline: none;
-            border-radius: 0;
-            padding-left: 0;
-        }
+/* Estilo para os inputs e textareas (borda inferior) */
+.form-input,
+.form-textarea {
+    resize: none;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    transition: border-bottom-color 150ms ease-in-out;
+    outline: none;
+    border-radius: 0;
+    padding-left: 0;
+}
 
-        .form-input:focus,
-        .form-textarea:focus {
-            border-bottom-color: #3B82F6;
-            box-shadow: none;
-        }
+.form-input:focus,
+.form-textarea:focus {
+    border-bottom-color: #3B82F6;
+    box-shadow: none;
+}
 
-        /* Placeholder color para o tema escuro */
-        .form-input::placeholder,
-        .form-textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
+/* Placeholder color para o tema escuro */
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
 
-        /* Estilo para o botão de envio */
-        .submit-button {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            border: 1px solid transparent;
-            border-radius: 0.375rem;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            font-size: 1.125rem;
-            font-weight: 500;
-            color: #FFFFFF;
-            background-color: #2563EB;
-            cursor: pointer;
-            transition: background-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
-        }
+/* Estilo para o botão de envio */
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    background-color: #2563EB;
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out, box-shadow 150ms ease-in-out;
+}
 
-        .submit-button:hover {
-            background-color: #1D4ED8;
-        }
+.submit-button:hover {
+    background-color: #1D4ED8;
+}
 
-        .submit-button:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 6px rgba(59, 130, 246, 0.2);
-        }
+.submit-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5), 0 0 0 6px rgba(59, 130, 246, 0.2);
+}
 
-        /* Ajuste de largura do botão para telas maiores */
-        @media (min-width: 768px) {
-            .submit-button {
-                width: auto;
-            }
-        }
+/* Estilos para mensagens de feedback */
+.form-status-message {
+    margin-top: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
 
-        /* Estilos para mensagens de feedback */
-        .form-status-message {
-            margin-top: 1rem;
-            padding: 0.75rem 1.25rem;
-            border-radius: 0.25rem;
-            font-size: 0.9rem;
-            text-align: center;
-        }
+.form-status-message.success {
+    background-color: #D1FAE5;
+    color: #065F46;
+    border: 1px solid #34D399;
+}
 
-        .form-status-message.success {
-            background-color: #D1FAE5;
-            color: #065F46;
-            border: 1px solid #34D399;
-        }
+.form-status-message.error {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border: 1px solid #F87171;
+}
 
-        .form-status-message.error {
-            background-color: #FEE2E2;
-            color: #991B1B;
-            border: 1px solid #F87171;
-        }
+.form-disclaimer{
+    font-size: 0.8rem;
+    color: #cbd5e0d5;
+}
