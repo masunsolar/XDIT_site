@@ -4,21 +4,16 @@
 }
 
 /* Header and Navigation */
+/* Header and Navigation */
 .main-header {
     background-color: #ffffff;
     box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
-    /* Remove 'position: fixed' aqui para o desktop */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    /* Adiciona a transição para a animação */
     transition: transform 0.3s ease-in-out;
-}
-
-/* Classe que vai esconder o header */
-.header-hidden {
-    transform: translateY(-100%);
 }
 
 .main-nav {
@@ -30,7 +25,6 @@
 
 .logo {
     font-size: 1.5rem;
-    line-height: 2rem;
     font-weight: 700;
     color: #2563eb;
 }
@@ -43,6 +37,10 @@
 
 .nav-logo img {
     width: 72px;
+}
+
+.header-nav-links {
+    display: none;
 }
 
 .nav-link {
@@ -91,36 +89,191 @@
     display: none;
 }
 
+/* ========== MOBILE DROPDOWN (clique) & MENU MOBILE GERAL ========= */
 @media (max-width: 1024px) {
 
-    /* No mobile, o header é fixo e esconde/mostra com a rolagem */
-    .main-header {
-        position: fixed;
-        transform: translateY(0);
+    .dropdown-mobile,
+    .header-nav-links,
+    .header-nav-links.submenu {
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     }
 
-    /* Exibe o menu hambúrguer no mobile */
+    .dropdown-mobile.open,
+    .header-nav-links.open,
+    .header-nav-links.submenu.open {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .dropdown-mobile {
+        transform-origin: top;
+        transform: scaleY(0);
+        height: 0;
+        padding: 0;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, height 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        overflow: hidden;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+        gap: 0.5rem;
+        padding-left: 2.2rem;
+    }
+
+    .dropdown-mobile.open {
+        transform: scaleY(1);
+        height: 165px;
+    }
+
+    /* Regras específicas para dropdown-mobile a */
+    .dropdown-mobile a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+        color: #2563eb;
+        text-decoration: none;
+        font-size: 1rem;
+        line-height: 1.4;
+        white-space: normal;
+    }
+
+    .dropdown-mobile a:hover {
+        background: #e0e7ff;
+        color: #1e293b;
+    }
+
+    /* Regras específicas para o menu mobile geral */
     .hamburger-btn {
         display: flex;
     }
 
-    /* Esconde os links principais por padrão no mobile */
     .header-nav-links {
-        display: none;
-    }
-
-    /* Estilos para o menu hambúrguer aberto */
-    .main-menu.open {
-        display: flex;
-        flex-direction: column;
         position: fixed;
         top: 0;
+        right: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 90px 2rem 2rem 2rem;
+        gap: 1.5rem;
+        z-index: 1000;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        transform: translateY(-100%);
+    }
+
+    .header-nav-links.open {
+        transform: translateY(0);
+    }
+
+    .header-nav-links.submenu {
+        height: 100%;
+        z-index: 1002;
+        display: flex;
+        transform: translateY(-100%);
+    }
+
+    .header-nav-links.submenu.open {
+        transform: translateY(0);
+    }
+
+    .main-nav {
+        flex-wrap: nowrap;
+    }
+}
+
+/* ========== BREAKPOINTS ESTRUTURAIS ========= */
+@media (min-width: 640px) {
+    .container {
+        max-width: 640px;
+    }
+
+    .hamburger-btn {
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 768px;
+    }
+
+    .header-nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .hamburger-btn {
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container {
+        max-width: 1536px;
+    }
+}
+
+@media (max-width: 700px) {
+    nav ul {
+        display: none;
+        position: absolute;
+        top: 60px;
         left: 0;
         width: 100%;
-        height: 100%;
-        background-color: #ffffff;
-        padding: 2rem;
-        z-index: 999;
-        justify-content: flex-start;
+        background-color: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px;
+    }
+
+    .header-inner {
+        position: relative;
+    }
+
+    .header-inner button.menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 1.5em;
+        color: #0a2540;
+        cursor: pointer;
     }
 }
