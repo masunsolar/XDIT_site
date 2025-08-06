@@ -102,10 +102,7 @@ Sinta-se à vontade para abrir **issues** com sugestões ou bugs encontrados.
 
 ### Tela de [Principal](https://github.com/masunsolar/XDIT_site/blob/main/main.html)
 - Ajustar conteudo
-- Arrumar a barra de navegação
 - Criar tela de serviços
-- Criar tela sobre
-- Criar tela de contato
 - Criar tela de demonstração
 - Formatar para celular
 - Corrigir design
