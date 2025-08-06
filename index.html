@@ -8,6 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/menu.js"></script>
+    <script src="./assets/js/arrow.js"></script>
+    <script src="./assets/js/form.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -48,7 +51,6 @@
     </header>
 
     <main class="main-content" id="main-content">
-        <script src="./assets/js/menu.js"></script>
         <section class="main-section">
 
             <div class="main-logo">
@@ -62,7 +64,6 @@
                 <!--button id="main-primary-btn">QUERO UMA DEMONSTRAÇÃO GRATUITA</button-->
             </div>
             <div class="scroll-down-arrow" id="scrollArrow"></div>
-            <script src="./assets/js/arrow.js"></script>
         </section>
 
         <section class="page-section intro-section">
@@ -99,7 +100,8 @@
                     <h3 class="card-title">Lacuna no Mercado</h3>
                     <p class="card-text">O que existe no mercado é limitado: sistemas básicos
                         que não atendem ou ERPs <b>caros</b> e <b>difíceis</b> de usar. Sua empresa merece algo
-                        <b>melhor</b>.</p>
+                        <b>melhor</b>.
+                    </p>
                 </div> <!--- OK --->
             </div>
         </section>
@@ -233,6 +235,53 @@
                     <a href="#" class="button secondary small">SOLICITAR CONTATO</a>
                 </div>
             </div>
+        </section>
+
+        <section class="form-section">
+            <div class="intro-content">
+                <h2>Vamos juntos turbinar os resultados da sua empresa!?</h2>
+                <p>
+                    Em Londrina, o DIT-X é a sua solução fiscal definitiva. Especializados em organizar, auditar e
+                    validar documentos fiscais já emitidos, nós garantimos clareza e controle total sobre suas notas,
+                    simplificando a gestão para que você possa focar no que realmente importa.
+                </p>
+                <p>
+                    Preencha o formulário e entre em contato conosco!
+                </p>
+            </div>
+
+            <!-- O atributo 'action' deve ser substituído pelo URL do seu formulário Formspree -->
+            <form class="contact-form" id="contactForm" action="https://formspree.io/f/manbparv" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Nome *</label>
+                        <input type="text" id="name" name="Nome" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="Email" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Assunto *</label>
+                        <input type="text" id="subject" name="Assunto" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp *</label>
+                        <input type="tel" id="whatsapp" name="WhatsApp" class="form-input" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem *</label>
+                    <textarea id="message" name="Mensagem" rows="5" class="form-textarea" required></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="submit-button" id="submitButton">
+                        Enviar
+                    </button>
+                </div>
+                <!-- Elemento para exibir mensagens de status -->
+                <div id="formStatus" class="form-status-message" style="display: none;"></div>
+            </form>
         </section>
     </main>
 

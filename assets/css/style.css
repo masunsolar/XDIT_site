@@ -19,6 +19,7 @@
 @import url("./components/arrow.css");
 @import url("./components/dropdown.css");
 @import url("./components/dropdown-mobile.css");
+@import url("./components/forms.css");
 
 /* ========== BREAKPOINTS ESTRUTURAIS ========= */
 @media (min-width: 640px) {
@@ -210,17 +211,17 @@
 }
 
 @media (max-width: 992px) {
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+
     .page-section {
         padding: 0;
         overflow-x: hidden;
     }
 
-    .chart-card {
-        padding: 0.3rem;
-    }
-
     .pricing-section {
-        padding: 3rem;
+        padding: 2rem;
     }
 
     .pricing-grid {
@@ -233,12 +234,11 @@
     }
 
     .pricing-card.popular {
-        margin-top: 20px;
         height: 100%;
     }
 
     .pricing-card.popular:hover{
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     .pricing-card:hover {
@@ -331,10 +331,6 @@
 
     .pricing-section .pricing-card {
         margin-bottom: 30px;
-    }
-
-    .pricing-section .pricing-card.popular {
-        margin-top: 15px;
     }
 
     .main-footer .footer-inner {
